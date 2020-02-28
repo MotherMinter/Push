@@ -103,10 +103,10 @@
                 <img src="assets/img/svg/wallet.svg" alt="">
                 <p v-html="newLineLabel($t('main.youWallet'))"></p>
               </a>
-              <a class="transfer__item" v-on:click="showFund()" v-if="spendChecks.includes('fund') || spendChecks.length === 0">
+              <!--<a class="transfer__item" v-on:click="showFund()" v-if="spendChecks.includes('fund') || spendChecks.length === 0">
                 <img src="assets/img/svg/charity.svg" alt="">
                 <p v-html="newLineLabel($t('main.charityFund'))"></p>
-              </a>
+              </a>-->
               <a class="transfer__item" v-on:click="showMobile()" v-if="spendChecks.includes('phone') || spendChecks.length === 0">
                 <img src="assets/img/svg/services.svg" alt="">
                 <p v-html="newLineLabel($t('main.mobileService'))"></p>
@@ -115,10 +115,10 @@
                 <img src="assets/img/svg/games.svg" alt="">
                 <p v-html="newLineLabel($t('main.games'))"></p>
               </a>
-              <span class="transfer__item" v-on:click="showFuel()" v-if="spendChecks.includes('fuel') || spendChecks.length === 0">
+              <!--<span class="transfer__item" v-on:click="showFuel()" v-if="spendChecks.includes('fuel') || spendChecks.length === 0">
                 <img src="assets/img/svg/fuel.svg" alt="" v-on:click="showFood()">
                 <p v-html="newLineLabel($t('main.foodDelivery'))"></p>
-              </span>
+              </span>-->
 
               <template v-for="service in services">
                 <template v-if="service.show">
