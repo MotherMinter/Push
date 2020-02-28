@@ -2,7 +2,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header>
-      <a href="/" class="logo">Came</a>
+      <a href="/" class="logo"><img src="/assets/img/svg/5sgift.svg" alt=""></a>
       <div class="messege" v-if="companyMsg && !isNeedAction" v-on:click="toggleMessage()" style="top:24px;">
         <img src="assets/img/svg/icon_message.svg" alt="">
       </div>

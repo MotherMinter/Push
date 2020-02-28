@@ -2,7 +2,7 @@
   <div class="wrapper">
     <!-- Header -->
     <header>
-      <a href="/" class="logo">Push.</a>
+      <a href="/" class="logo"><img src="/assets/img/svg/5sgift.svg" alt=""></a>
       <div :class="{'hamburger-active': IsActiveHamburgerClass}" class="hamburger" v-on:click="toggleMenu()">
         <span></span>
         <span></span>

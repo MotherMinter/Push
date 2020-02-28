@@ -264,7 +264,7 @@ header {
 
 .logo {
   display: block;
-  width: 38px;
+  /*width: 38px;
   color: var(--prim-color);
   font: 24px/1 "SegoeUIBold", sans-serif;
   -webkit-transform: rotate(-90deg);
@@ -272,8 +272,9 @@ header {
   transform: rotate(-90deg);
   -webkit-transform-origin: right;
   -ms-transform-origin: right;
-  transform-origin: right;
-  margin-left: -28px; }
+  transform-origin: right;*/
+  margin: -28px -22px 0 0;
+}
 
 .hamburger {
   width: 24px;
@@ -652,7 +653,6 @@ header {
     -ms-flex-pack: justify;
     justify-content: space-between; }
     .content__attach-messege form input {
-      display: none;
       width: 100%;
       font: 14px/1 "SegoeUILight", sans-serif;
       color: var(--grey-light);
@@ -666,6 +666,23 @@ header {
   .content__attach-messege p {
     font-size: 24px;
     margin-bottom: 28px !important; }
+
+.content__attach-messege #input-01 {
+  margin-bottom: 36px;
+}
+.content__attach-messege .options {
+  font: 14px/1 "SegoeUIBold", sans-serif;
+  color: #adadad;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.content__attach-messege .options-active {
+  color: var(--green);
+}
+.content__attach-messege .options-wrap {
+  display: none;
+}
+
   .content__attach-messege .trigger {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -677,7 +694,7 @@ header {
     background: var(--grey-lighting);
     cursor: pointer;
     overflow: hidden;
-    margin-top: 8px;
+    margin-top: -2px;
     -webkit-transition: background-color .2s;
     -o-transition: background-color .2s;
     transition: background-color .2s; }
