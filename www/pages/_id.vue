@@ -79,7 +79,7 @@
       </template>
 
       <template v-if="isShowSkin">
-        <iframe style="width: 100%; height: 100%; position: absolute; z-index: 100;" v-bind:src="skinContent"></iframe>
+        <iframe style="width: 100%; height: 100%; position: fixed; z-index: 100;" v-bind:src="skinContent"></iframe>
       </template>
 
       <template v-show="step === 1">
