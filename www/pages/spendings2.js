@@ -20,7 +20,7 @@ export const SPENDS_SERVICES = [
     'label': 'App Store & iTunes',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
     'show': true,
-    'bgcolor': '#1f191a',
+    'bgcolor': '#369af5',
     'slug': 'itunes-russia',
     'values': [
       { 'value': '300', 'label': '300 RUB', 'show': true, },
@@ -400,4 +400,43 @@ export const SPENDS_SERVICES = [
       { 'value': '50000', 'label': '50000 RUB', 'show': true, },
   ]
   },
-]
+  {
+    'id': 'yandeks_eda-russia',
+    'ico': '/assets/img/yafood.png',
+    'label': 'Яндекс.Еда',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'yandeks_eda-russia',
+    'values': [
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'onlajn-kinoteatr-ivi-russia',
+    'ico': '/assets/img/ivi.png',
+    'label': 'IVI',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#e6003f',
+    'slug': 'onlajn-kinoteatr-ivi-russia',
+    'values': [
+      { 'value': '100', 'label': '100 RUB', 'show': true, },
+      { 'value': '150', 'label': '150 RUB', 'show': true, },
+      { 'value': '200', 'label': '200 RUB', 'show': true, },
+      { 'value': '300', 'label': '300 RUB', 'show': true, },
+      { 'value': '400', 'label': '400 RUB', 'show': true, },
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '700', 'label': '700 RUB', 'show': true, },
+      { 'value': '1100', 'label': '1100 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+];
