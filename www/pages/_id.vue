@@ -99,10 +99,6 @@
                 <img src="assets/img/svg/person.svg" alt="">
                 <p v-html="newLineLabel($t('main.anotherPerson'))"></p>
               </a>
-              <a class="transfer__item" v-on:click="showMyTransfer()" v-if="spendChecks.includes('yourWallet') || spendChecks.length === 0">
-                <img src="assets/img/svg/wallet.svg" alt="">
-                <p v-html="newLineLabel($t('main.youWallet'))"></p>
-              </a>
               <!--<a class="transfer__item" v-on:click="showFund()" v-if="spendChecks.includes('fund') || spendChecks.length === 0">
                 <img src="assets/img/svg/charity.svg" alt="">
                 <p v-html="newLineLabel($t('main.charityFund'))"></p>
@@ -110,10 +106,6 @@
               <a class="transfer__item" v-on:click="showMobile()" v-if="spendChecks.includes('phone') || spendChecks.length === 0">
                 <img src="assets/img/svg/services.svg" alt="">
                 <p v-html="newLineLabel($t('main.mobileService'))"></p>
-              </a>
-              <a class="transfer__item" v-on:click="showGames()" v-if="spendChecks.includes('games') || spendChecks.length === 0">
-                <img src="assets/img/svg/games.svg" alt="">
-                <p v-html="newLineLabel($t('main.games'))"></p>
               </a>
               <!--<span class="transfer__item" v-on:click="showFuel()" v-if="spendChecks.includes('fuel') || spendChecks.length === 0">
                 <img src="assets/img/svg/fuel.svg" alt="" v-on:click="showFood()">
@@ -130,6 +122,15 @@
                   </div>
                 </template>
               </template>
+
+              <a class="transfer__item" v-on:click="showMyTransfer()" v-if="spendChecks.includes('yourWallet') || spendChecks.length === 0">
+              <img src="assets/img/svg/wallet.svg" alt="">
+              <p v-html="newLineLabel($t('main.youWallet'))"></p>
+              </a>
+              <a class="transfer__item" v-on:click="showGames()" v-if="spendChecks.includes('games') || spendChecks.length === 0">
+              <img src="assets/img/svg/games.svg" alt="">
+              <p v-html="newLineLabel($t('main.games'))"></p>
+              </a>
             </div>
           </template>
 

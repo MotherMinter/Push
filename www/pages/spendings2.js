@@ -1,5 +1,78 @@
 export const SPENDS_SERVICES = [
   {
+    'id': 'yandeks_eda-russia',
+    'ico': '/assets/img/yafood.png',
+    'label': 'Яндекс.Еда',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'yandeks_eda-russia',
+    'values': [
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'svyaznoj-russia',
+    'ico': '/assets/img/svg/Svayznoy.svg',
+    'label': 'Svyaznoy',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#4c1e87',
+    'slug': 'svyaznoj-russia',
+    'values': [
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+    ]
+  },
+  {
+    'id': 'sportmaster-russia',
+    'ico': '/assets/img/svg/SportMaster.svg',
+    'label': 'Спортмастер',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#003295',
+    'slug': 'sportmaster-russia',
+    'values': [
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '2500', 'label': '2500 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '3500', 'label': '3500 RUB', 'show': true, },
+      { 'value': '4000', 'label': '4000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+      { 'value': '6000', 'label': '6000 RUB', 'show': true, },
+      { 'value': '6500', 'label': '6500 RUB', 'show': true, },
+      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
+      { 'value': '16000', 'label': '16000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'detskij-mir-russia',
+    'ico': '/assets/img/svg/Detskiy_mir.svg',
+    'label': 'Детский мир',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#0073e6',
+    'slug': 'detskij-mir-russia',
+    'values': [
+      { 'value': '300', 'label': '300 RUB', 'show': true, },
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '750', 'label': '750 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+  {
     'id': 'steam-eur-international',
     'ico': '/assets/img/svg/Steam.svg',
     'label': 'Steam',
@@ -15,6 +88,91 @@ export const SPENDS_SERVICES = [
     ]
   },
   {
+    'id': 'playstation-russia',
+    'ico': '/assets/img/playstation.png',
+    'label': 'PlayStation',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'playstation-russia',
+    'values': [
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'tutu_ru-russia',
+    'ico': '/assets/img/tutu.png',
+    'label': 'Tutu',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'tutu_ru-russia',
+    'values': [
+      { 'value': '100', 'label': '100 RUB', 'show': true, },
+      { 'value': '200', 'label': '200 RUB', 'show': true, },
+      { 'value': '300', 'label': '300 RUB', 'show': true, },
+      { 'value': '400', 'label': '400 RUB', 'show': true, },
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+      { 'value': '7000', 'label': '7000 RUB', 'show': true, },
+      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'sunlight-russia',
+    'ico': '/assets/img/svg/Sunlight.svg',
+    'label': 'SUNLIGHT',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#d34c47',
+    'slug': 'sunlight-russia',
+    'values': [
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
+    ]
+  },
+  {
+    'id': 'onlajn-kinoteatr-ivi-russia',
+    'ico': '/assets/img/ivi.png',
+    'label': 'IVI',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#e6003f',
+    'slug': 'onlajn-kinoteatr-ivi-russia',
+    'values': [
+      { 'value': '100', 'label': '100 RUB', 'show': true, },
+      { 'value': '150', 'label': '150 RUB', 'show': true, },
+      { 'value': '200', 'label': '200 RUB', 'show': true, },
+      { 'value': '300', 'label': '300 RUB', 'show': true, },
+      { 'value': '400', 'label': '400 RUB', 'show': true, },
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '700', 'label': '700 RUB', 'show': true, },
+      { 'value': '1100', 'label': '1100 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'amediateka-russia',
+    'ico': '/assets/img/svg/Amediateka.svg',
+    'label': 'Amediateka',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#1f191a',
+    'slug': 'amediateka-russia',
+    'values': [
+      { 'value': '350', 'label': '350 RUB', 'show': true, },
+      { 'value': '950', 'label': '950 RUB', 'show': true, },
+      { 'value': '1300', 'label': '1300 RUB', 'show': true, },
+      { 'value': '4999', 'label': '4999 RUB', 'show': true, },
+    ]
+  },
+  {
     'id': 'itunes-russia',
     'ico': '/assets/img/svg/Apple.svg',
     'label': 'App Store & iTunes',
@@ -27,19 +185,6 @@ export const SPENDS_SERVICES = [
       { 'value': '500', 'label': '500 RUB', 'show': true, },
       { 'value': '1000', 'label': '1000 RUB', 'show': false, },
       { 'value': '3000', 'label': '3000 RUB', 'show': false, },
-    ]
-  },
-  {
-    'id': 'svyaznoj-russia',
-    'ico': '/assets/img/svg/Svayznoy.svg',
-    'label': 'Svyaznoy',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#4c1e87',
-    'slug': 'svyaznoj-russia',
-    'values': [
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
     ]
   },
   {
@@ -81,34 +226,6 @@ export const SPENDS_SERVICES = [
     'values': [
       { 'value': '10000', 'label': '10000 RUB', 'show': true, },
       { 'value': '20000', 'label': '20000 RUB', 'show': true, },
-    ]
-  },
-  {
-    'id': 'sunlight-russia',
-    'ico': '/assets/img/svg/Sunlight.svg',
-    'label': 'SUNLIGHT',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#d34c47',
-    'slug': 'sunlight-russia',
-    'values': [
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
-    ]
-  },
-  {
-    'id': 'amediateka-russia',
-    'ico': '/assets/img/svg/Amediateka.svg',
-    'label': 'Amediateka',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#1f191a',
-    'slug': 'amediateka-russia',
-    'values': [
-      { 'value': '350', 'label': '350 RUB', 'show': true, },
-      { 'value': '950', 'label': '950 RUB', 'show': true, },
-      { 'value': '1300', 'label': '1300 RUB', 'show': true, },
-      { 'value': '4999', 'label': '4999 RUB', 'show': true, },
     ]
   },
   {
@@ -320,25 +437,6 @@ export const SPENDS_SERVICES = [
   ]
   },
   {
-    'id': 'detskij-mir-russia',
-    'ico': '/assets/img/svg/Detskiy_mir.svg',
-    'label': 'Детский мир',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#0073e6',
-    'slug': 'detskij-mir-russia',
-    'values': [
-      { 'value': '300', 'label': '300 RUB', 'show': true, },
-      { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '750', 'label': '750 RUB', 'show': true, },
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-  ]
-  },
-  {
     'id': 'adamas-russia',
     'ico': '/assets/img/svg/Adamas.svg',
     'label': 'АДАМАС',
@@ -353,30 +451,6 @@ export const SPENDS_SERVICES = [
       { 'value': '5000', 'label': '5000 RUB', 'show': true, },
       { 'value': '10000', 'label': '10000 RUB', 'show': true, },
       { 'value': '20000', 'label': '20000 RUB', 'show': true, },
-  ]
-  },
-  {
-    'id': 'sportmaster-russia',
-    'ico': '/assets/img/svg/SportMaster.svg',
-    'label': 'Спортмастер',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#003295',
-    'slug': 'sportmaster-russia',
-    'values': [
-      { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '2500', 'label': '2500 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '3500', 'label': '3500 RUB', 'show': true, },
-      { 'value': '4000', 'label': '4000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-      { 'value': '6000', 'label': '6000 RUB', 'show': true, },
-      { 'value': '6500', 'label': '6500 RUB', 'show': true, },
-      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
-      { 'value': '16000', 'label': '16000 RUB', 'show': true, },
   ]
   },
   {
@@ -398,80 +472,6 @@ export const SPENDS_SERVICES = [
       { 'value': '40000', 'label': '40000 RUB', 'show': true, },
       { 'value': '45000', 'label': '45000 RUB', 'show': true, },
       { 'value': '50000', 'label': '50000 RUB', 'show': true, },
-  ]
-  },
-  {
-    'id': 'yandeks_eda-russia',
-    'ico': '/assets/img/yafood.png',
-    'label': 'Яндекс.Еда',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#f5f5f5',
-    'slug': 'yandeks_eda-russia',
-    'values': [
-      { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-  ]
-  },
-  {
-    'id': 'onlajn-kinoteatr-ivi-russia',
-    'ico': '/assets/img/ivi.png',
-    'label': 'IVI',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#e6003f',
-    'slug': 'onlajn-kinoteatr-ivi-russia',
-    'values': [
-      { 'value': '100', 'label': '100 RUB', 'show': true, },
-      { 'value': '150', 'label': '150 RUB', 'show': true, },
-      { 'value': '200', 'label': '200 RUB', 'show': true, },
-      { 'value': '300', 'label': '300 RUB', 'show': true, },
-      { 'value': '400', 'label': '400 RUB', 'show': true, },
-      { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '700', 'label': '700 RUB', 'show': true, },
-      { 'value': '1100', 'label': '1100 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-  ]
-  },
-  {
-    'id': 'playstation-russia',
-    'ico': '/assets/img/playstation.png',
-    'label': 'PlayStation',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#f5f5f5',
-    'slug': 'playstation-russia',
-    'values': [
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-  ]
-  },
-  {
-    'id': 'tutu_ru-russia',
-    'ico': '/assets/img/tutu.png',
-    'label': 'Tutu',
-    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
-    'bgcolor': '#f5f5f5',
-    'slug': 'tutu_ru-russia',
-    'values': [
-      { 'value': '100', 'label': '100 RUB', 'show': true, },
-      { 'value': '200', 'label': '200 RUB', 'show': true, },
-      { 'value': '300', 'label': '300 RUB', 'show': true, },
-      { 'value': '400', 'label': '400 RUB', 'show': true, },
-      { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-      { 'value': '7000', 'label': '7000 RUB', 'show': true, },
-      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
   ]
   },
 ];
