@@ -439,4 +439,39 @@ export const SPENDS_SERVICES = [
       { 'value': '5000', 'label': '5000 RUB', 'show': true, },
   ]
   },
+  {
+    'id': 'playstation-russia',
+    'ico': '/assets/img/playstation.png',
+    'label': 'PlayStation',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#0280ff',
+    'slug': 'playstation-russia',
+    'values': [
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+  ]
+  },
+  {
+    'id': 'tutu_ru-russia',
+    'ico': '/assets/img/tutu.png',
+    'label': 'Tutu',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'tutu_ru-russia',
+    'values': [
+      { 'value': '100', 'label': '100 RUB', 'show': true, },
+      { 'value': '200', 'label': '200 RUB', 'show': true, },
+      { 'value': '300', 'label': '300 RUB', 'show': true, },
+      { 'value': '400', 'label': '400 RUB', 'show': true, },
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+      { 'value': '7000', 'label': '7000 RUB', 'show': true, },
+      { 'value': '10000', 'label': '10000 RUB', 'show': true, },
+  ]
+  },
 ];
