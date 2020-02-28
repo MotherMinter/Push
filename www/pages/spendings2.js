@@ -5,7 +5,7 @@ export const SPENDS_SERVICES = [
     'label': 'Steam',
     'desc': 'Steam game market',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1f191a',
     'slug': 'steam-eur-international',
     'values': [
       { 'value': '10', 'label': '10 EUR', 'show': false, },
@@ -20,7 +20,7 @@ export const SPENDS_SERVICES = [
     'label': 'App Store & iTunes',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1f191a',
     'slug': 'itunes-russia',
     'values': [
       { 'value': '300', 'label': '300 RUB', 'show': true, },
@@ -35,7 +35,7 @@ export const SPENDS_SERVICES = [
     'label': 'Svyaznoy',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#4c1e87',
     'slug': 'svyaznoj-russia',
     'values': [
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
@@ -48,7 +48,7 @@ export const SPENDS_SERVICES = [
     'label': 'Modi Fun Shop',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#fff',
     'slug': 'modi-fun-shop-russia',
     'values': [
       { 'value': '500', 'label': '500 RUB', 'show': true, },
@@ -62,7 +62,7 @@ export const SPENDS_SERVICES = [
     'label': 'DECATHLON',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1482c2',
     'slug': 'decathlon-russia',
     'values': [
       { 'value': '500', 'label': '500 RUB', 'show': true, },
@@ -76,7 +76,7 @@ export const SPENDS_SERVICES = [
     'label': 'Togas',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1f191a',
     'slug': 'togas-russia',
     'values': [
       { 'value': '10000', 'label': '10000 RUB', 'show': true, },
@@ -89,7 +89,7 @@ export const SPENDS_SERVICES = [
     'label': 'SUNLIGHT',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#d34c47',
     'slug': 'sunlight-russia',
     'values': [
       { 'value': '5000', 'label': '5000 RUB', 'show': true, },
@@ -102,7 +102,7 @@ export const SPENDS_SERVICES = [
     'label': 'Amediateka',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1f191a',
     'slug': 'amediateka-russia',
     'values': [
       { 'value': '350', 'label': '350 RUB', 'show': true, },
@@ -117,7 +117,7 @@ export const SPENDS_SERVICES = [
     'label': 'HOFF',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#cd352a',
     'slug': 'hoff-russia',
     'values': [
       { 'value': '2500', 'label': '2500 RUB', 'show': true, },
@@ -130,7 +130,7 @@ export const SPENDS_SERVICES = [
     'label': 'PANDORA',
     'desc': '',
     'show': true,
-    //'bgcolor': '#ffffff',
+    'bgcolor': '#ffffff',
     'slug': 'pandora-russia',
     'values': [
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
@@ -143,7 +143,7 @@ export const SPENDS_SERVICES = [
     'label': 'World of Tanks',
     'desc': '',
     'show': true,
-    //'bgcolor': '#000000',
+    'bgcolor': '#1f191a',
     'slug': 'world-of-tanks-russia',
     'values': [
       { 'value': '30 days premium account', 'label': '30 days premium account', 'show': true, },
@@ -157,7 +157,7 @@ export const SPENDS_SERVICES = [
     'label': 'Litres.ru',
     'desc': 'Litres - online book shop',
     'show': true,
-    //'bgcolor': '#ffffff',
+    'bgcolor': '#efeee9',
     'slug': 'litres-russia',
     'values': [
       { 'value': '50', 'label': '50 RUB', 'show': true, },
