@@ -445,7 +445,7 @@ export const SPENDS_SERVICES = [
     'label': 'PlayStation',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
     'show': true,
-    'bgcolor': '#0280ff',
+    'bgcolor': '#f5f5f5',
     'slug': 'playstation-russia',
     'values': [
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
