@@ -994,6 +994,9 @@ header {
   height: 160px;
   background: #003295;
 }
+.modal-sevices .modal-header img {
+  max-height: 100px;
+}
 .modal-sevices .modal-header .close-modal {
   position: absolute;
   top: 18px;
@@ -2799,7 +2802,7 @@ footer {
 .main #modi-fun-shop-russia {
   background: #fff;
 }
-.main #modi img {
+.main #modi-fun-shop-russia img {
   width: 90%;
 }
 .main #enaza {
