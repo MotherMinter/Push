@@ -252,7 +252,7 @@ header {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   padding: 32px 26px 0;
   position: absolute;
@@ -272,8 +272,11 @@ header {
   transform: rotate(-90deg);
   -webkit-transform-origin: right;
   -ms-transform-origin: right;
-  transform-origin: right;*/
-  margin: -28px -22px 0 0;
+  transform-origin: right;
+  margin: -28px -22px 0 0;*/
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .hamburger {
