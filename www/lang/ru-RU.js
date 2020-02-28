@@ -108,7 +108,7 @@ export default {
   },
   main: {
     youBalance: 'Ваш баланс',
-    transferSection: 'Вы можете потратить или перевести свои монеты:',
+    transferSection: 'Потратьте монеты любым из способов:',
     anotherPerson: 'Другому|человеку',
     youWallet: 'На ваш|кошелек',
     charityFund: 'Фонду|помощи',
