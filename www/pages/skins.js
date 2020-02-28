@@ -7,7 +7,7 @@ export const SKINS = [
   },
   {
     id: 'mday',
-    label: 'VALENTINE\'S DAY',
+    label: 'THANK YOU',
     image: '',
     path: './skins/valentines-day.html'
   },
