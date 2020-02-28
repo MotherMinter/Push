@@ -275,8 +275,8 @@ header {
   transform: none;
   margin: 0;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 16px;
+  left: 16px;
 }
 
 .hamburger {
