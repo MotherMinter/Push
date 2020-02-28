@@ -1054,7 +1054,9 @@ header {
     left: 30px;
     right: 30px;
     background: var(--green-lighting);
-    z-index: -1; }
+    z-index: -1;
+    overflow: hidden;
+  }
 
 .modal-qr {
   padding-top: calc(50% - 150px);
@@ -1526,10 +1528,11 @@ header {
     background: var(--pink); }
 
 .pyro {
-  position: fixed;
-  top: 46vh;
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100vw;
+  animation: stop 5s;
   z-index: -1; }
 
 .pyro > .before, .pyro > .after {
@@ -1708,6 +1711,11 @@ header {
   80%, 99.9% {
     margin-top: 30%;
     margin-left: 80%; } }
+
+@keyframes stop {
+  0%, 80% {opacity: 1}
+  100% {opacity: 0}
+}
 
 footer {
   margin-top: 48px;
