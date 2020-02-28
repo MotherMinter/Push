@@ -135,7 +135,7 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--blue);
-  padding-bottom: 2px;
+  padding-bottom: 6px;
   background: #f4f4f4; }
 
 .btn-back {
