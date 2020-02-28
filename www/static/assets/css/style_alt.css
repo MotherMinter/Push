@@ -2795,19 +2795,19 @@ footer {
   width: 42px;
   margin-left: -12px;
 }
-.main #steam-eur-international {
+/* .main #steam-eur-international {
   background: #1f191a;
 }
-.main #sport-master {
+.main #sportmaster-russia {
   background: #003295;
 }
-.main #dochki-sinochk {
+.main #dochki-synochki-russia {
   background: #f6dc34;
-}
-.main #dochki-sinochk img {
+} */
+.main #dochki-synochki-russia img {
   width: 112px;
 }
-.main #litres-russia {
+/* .main #litres-russia {
   background: #efeee9;
 }
 .main #itunes-russia{
@@ -2821,17 +2821,17 @@ footer {
 }
 .main #modi-fun-shop-russia {
   background: #fff;
-}
+} */
 .main #modi-fun-shop-russia img {
   width: 90%;
 }
-.main #enaza {
+/* .main #enaza-igry-wildlands-russia {
   background: #c62525;
-}
-.main #enaza img {
+} */
+.main #enaza-igry-wildlands-russia img {
   width: 90%;
 }
-.main #togas-russia {
+/* .main #togas-russia {
   background: #1f191a;
 }
 .main #amediateka-russia {
@@ -2843,43 +2843,43 @@ footer {
 
 .main #hoff-russia {
   background: #cd352a;
-}
-.main #dynatone img {
+} */
+.main #dynatone-russia img {
   width: 90%;
 }
-.main #korablik img {
+.main #korablik-russia img {
   width: 70%;
 }
-.main #modis {
+/* .main #modis-russia {
   background: #0093d3;
-}
-.main #modis img {
+} */
+.main #modis-russia img {
   width: 90%;
 }
-.main #okko {
+/* .main #okko {
   background: #000;
-}
+} */
 .main #okko img {
   width: 98%;
 }
-.main #black_star img {
+.main #black-star-wear-russia img {
   width: 98%;
 }
-.main #lush {
+/* .main #lush-russia {
   background: #1f191a;
 }
-.main #zoozavr {
+.main #zoozavr-russia {
   background: #e5e700;
 }
 .main #world-of-tanks-russia {
   background: #1f191a;
 }
-.main #detskiy_mir {
+.main #detskij-mir-russia {
   background: #0073e6;
 }
-.main #adamas {
+.main #adamas-russia {
   background: #00968a;
-}
+} */
 
 @media (max-width: 360px) {
   .main #dochki-sinochk img {
