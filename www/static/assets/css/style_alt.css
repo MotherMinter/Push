@@ -800,7 +800,7 @@ header {
   padding: 0 32px;
   padding-top: calc(50% - 80px);
   padding-top: calc(50vh - 80px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   text-align: center;
@@ -1273,7 +1273,7 @@ header {
   padding-top: calc(50% - 220px);
   padding-top: calc(50vh - 220px);
   text-align: center;
-  margin: 0 -5px; }
+  }
   .main .transfer {
     font-size: 14px;
     color: var(--blue-lightnig);
