@@ -559,11 +559,13 @@ header {
 
 .content__start .advanced {
     display: block;
-    width: 140px;
+    /* width: 140px; */
+    width: auto;
     margin: 24px auto 0;
     text-align: center;
     color: var(--blue);
-    border-bottom: 1px solid #c4c2fe;
+    /* border-bottom: 1px solid #c4c2fe; */
+    border-bottom: none;
     cursor: pointer;
 }
 
