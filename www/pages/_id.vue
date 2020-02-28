@@ -122,7 +122,10 @@
 
               <template v-for="service in services">
                 <template v-if="service.show">
-                  <div class="transfer__item transfer__item-img" v-bind:id="service.id" v-on:click="showServiceAlert(service)">
+                  <div class="transfer__item transfer__item-img"
+                       v-bind:id="service.id"
+                       v-bind:style="'background-color:' + service.bgcolor"
+                       v-on:click="showServiceAlert(service)">
                     <img v-bind:src="service.ico" alt="" class="logo__item">
                   </div>
                 </template>
