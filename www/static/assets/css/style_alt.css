@@ -2643,7 +2643,7 @@ footer {
   width: 42px;
   margin-left: -12px;
 }
-.main #steam {
+.main #steam-eur-international {
   background: #1f191a;
 }
 .main #sport-master {
@@ -2655,19 +2655,19 @@ footer {
 .main #dochki-sinochk img {
   width: 112px;
 }
-.main #litres {
+.main #litres-russia {
   background: #efeee9;
 }
-.main #apple {
+.main #itunes-russia{
   background: #1f191a;
 }
-.main #svayznoy {
+.main #svyaznoj-russia {
   background: #4c1e87;
 }
-.main #decathlon {
+.main #decathlon-russia {
   background: #1482c2;
 }
-.main #modi {
+.main #modi-fun-shop-russia {
   background: #fff;
 }
 .main #modi img {
@@ -2679,17 +2679,17 @@ footer {
 .main #enaza img {
   width: 90%;
 }
-.main #togas {
+.main #togas-russia {
   background: #1f191a;
 }
-.main #amediateka {
+.main #amediateka-russia {
   background: #1f191a;
 }
-.main #sunlight {
+.main #sunlight-russia {
   background: #d34c47;
 }
 
-.main #hoff {
+.main #hoff-russia {
   background: #cd352a;
 }
 .main #dynatone img {
@@ -2719,7 +2719,7 @@ footer {
 .main #zoozavr {
   background: #e5e700;
 }
-.main #world_of_tanks {
+.main #world-of-tanks-russia {
   background: #1f191a;
 }
 .main #detskiy_mir {
