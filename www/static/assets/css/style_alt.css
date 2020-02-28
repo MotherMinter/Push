@@ -976,6 +976,127 @@ header {
   .modal-skins .skins-items {
     display: block; }
 
+.modal-sevices {
+  padding: 0;
+  height: 100%;
+}
+.modal-sevices .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 160px;
+  background: #003295;
+}
+.modal-sevices .modal-header .close-modal {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.modal-sevices .modal-header .close-modal span {
+  position: absolute;
+  top: 13px;
+  left: 5px;
+  width: 18px;
+  height: 1px;
+  background: #fff;
+}
+.modal-sevices .modal-header .close-modal span:first-child {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.modal-sevices .modal-header .close-modal span:last-child {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.modal-sevices .use {
+  font: 14px/1.2 "SegoeUISemiBold", sans-serif;
+  color: #000;
+  margin: 28px -2px 24px;
+}
+.modal-sevices .wrap-select {
+  position: relative;
+  padding: 0 8px;
+}
+.modal-sevices .wrap-select:after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  border-bottom: 1px solid #003295;
+  border-left: 1px solid #003295;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.modal-sevices .wrap-select:focus:after {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.modal-sevices .wrap-select select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dcdcdc;
+  font: 16px/1.2 "SegoeUILight", sans-serif;
+  color: #000;
+  padding-bottom: 1em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.modal-sevices .wrap-select select option {
+  border: none;
+}
+.modal-sevices .your-balance {
+  font-size: 12px;
+  color: #767676;
+  text-align: left;
+  padding-top: 6px;
+  padding-left: 8px;
+  margin-bottom: 36px;
+}
+.modal-sevices .your-balance span {
+  font-family: "SegoeUIBlack", sans-serif;
+  text-transform: uppercase;
+}
+.modal-sevices .input {
+  width: 93.5%;
+  width: calc(100% - 16px);
+  margin: 0 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.modal-sevices .btn:not(.btn-back) {
+  background: var(--blue);
+  margin-bottom: 6px;
+}
+.modal-sevices .btn-back {
+  margin-bottom: 22px;
+}
+.modal-sevices .congr {
+  font: 12px/1.6 "SegoeUISemiBold", sans-serif;
+  color: var(--blue);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
 .content__success {
   margin-top: calc(50% - 210px);
   margin-top: calc(50vh - 210px);
