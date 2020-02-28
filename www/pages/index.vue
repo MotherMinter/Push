@@ -309,10 +309,10 @@
             </div>
             <!--<a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>-->
             <div class="back">
-              <div class="pyro">
+              <!--<div class="pyro">
                 <div class="before"></div>
                 <div class="after"></div>
-              </div>
+              </div>-->
             </div>
           </div>
           </transition>
