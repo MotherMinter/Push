@@ -48,7 +48,7 @@ export const SPENDS_SERVICES = [
     'label': 'Modi Fun Shop',
     'desc': '',
     'show': true,
-    'bgcolor': '#fff',
+    'bgcolor': '#f5f5f5',
     'slug': 'modi-fun-shop-russia',
     'values': [
       { 'value': '500', 'label': '500 RUB', 'show': true, },
@@ -130,7 +130,7 @@ export const SPENDS_SERVICES = [
     'label': 'PANDORA',
     'desc': '',
     'show': true,
-    'bgcolor': '#ffffff',
+    'bgcolor': '#f5f5f5',
     'slug': 'pandora-russia',
     'values': [
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
