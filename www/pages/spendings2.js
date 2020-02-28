@@ -211,7 +211,7 @@ export const SPENDS_SERVICES = [
   },
   {
     'id': 'korablik-russia',
-    'ico': '/assets/img/korablik.png',
+    'ico': '/assets/img/korabli.png',
     'label': 'Кораблик',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
     'show': true,
