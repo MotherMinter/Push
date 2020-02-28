@@ -400,3 +400,4 @@ export const SPENDS_SERVICES = [
       { 'value': '50000', 'label': '50000 RUB', 'show': true, },
   ]
   },
+]
