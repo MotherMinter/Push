@@ -46,7 +46,12 @@
     <!-- /Header -->
     <main>
       <div v-if="isShowLoader"  class="louder">
-        <div class="louder-wrap"><div class="lds-ripple"><div></div><div></div></div></div>
+        <!-- <div class="louder-wrap"><div class="lds-ripple"><div></div><div></div></div></div>-->
+        <div class="loader-02" style="top: 40%;">
+          <div class="inner one"></div>
+          <div class="inner two"></div>
+          <div class="inner three"></div>
+        </div>
       </div>
 
       <template v-if="screenStart">
