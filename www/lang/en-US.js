@@ -31,7 +31,7 @@ export default {
   menu: {
     home: 'Home',
     about: 'About',
-    mnemonic: 'Show my seed phrase',
+    mnemonic: 'My seed',
     account: 'Account',
     createWallet: 'Create wallet',
   },
