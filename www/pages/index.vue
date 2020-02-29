@@ -135,7 +135,7 @@
           <div v-if="step === 3" class="content__item content__attach-messege content__item-active">
             <form>
 
-              <p>{{ $t('create.putMoney') }}?</p>
+              <p>{{ $t('create.putMoney') }}</p>
               <input id="input-01" type="text" v-bind:placeholder="$t('create.yourMoneyCountHere')" v-model="createParamBalance" style="display: block">
 
               <p class="options"  v-bind:class="{ 'green': isShowAdditional }">{{ $t('create.additionalOptions') }}</p>
@@ -145,10 +145,10 @@
 
               <transition name="fadeDown">
               <div class="options-wrap" v-if="isShowAdditional" style="display: block; margin-top: 5px;">
-                <p>{{ $t('create.attachMessage') }}?</p>
+                <p>{{ $t('create.attachMessage') }}</p>
                 <input id="input-02" type="text" v-bind:placeholder="$t('create.yourMessageHere')" v-model="createParamMessage" style="display: block">
 
-                <p>{{ $t('create.putPassword') }}?</p>
+                <p>{{ $t('create.putPassword') }}</p>
                 <input id="input-03" type="password" v-bind:placeholder="$t('create.yourPasswordHere')" v-model="createParamPassword" style="display: block">
 
                 <p>{{ $t('create.Skins') }}?</p>
