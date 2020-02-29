@@ -1462,7 +1462,7 @@ header {
 
 .another-persone {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .another-persone .insert {
     line-height: 1.6;
     margin-bottom: 0; }
@@ -1474,13 +1474,13 @@ header {
 
 .another-persone__have-wallet {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .another-persone__have-wallet .btn {
     background: var(--blue); }
 
 .another-persone__dont-wallet {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .another-persone__dont-wallet .insert {
     margin-bottom: 42px; }
   .another-persone__dont-wallet .btn {
@@ -1547,14 +1547,14 @@ header {
 
 .your-wallet {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .your-wallet .btn {
     display: inline-block;
     background: var(--blue); }
 
 .charity-fund {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .charity-fund .description {
     margin-top: 24px;
     margin-bottom: 24px; }
@@ -1563,7 +1563,7 @@ header {
 
 .mobile-services {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .mobile-services #phone {
     font: 16px/1.2 "SegoeUIBold", sans-serif;
     color: #000; }
@@ -1584,7 +1584,7 @@ header {
 
 .games {
   padding-top: calc(50% - 220px);
-  padding-top: calc(50vh - 220px); }
+  padding-top: calc(50vh - 200px); }
   .games .icon {
     margin-bottom: 24px; }
   .games .description {
