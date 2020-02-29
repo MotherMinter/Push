@@ -402,7 +402,9 @@ export class CoreController {
         const bipPrice = new Decimal(item.satoshiPrice)
           .mul(1.1)
           .div(SAT_BTC)
-          .div(convertInfo.price);
+          .div(convertInfo.price)
+          .floor()
+        ;
 
         return {
           value: item.value,

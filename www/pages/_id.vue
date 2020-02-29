@@ -491,7 +491,7 @@
           <div class="wrap-select">
             <select size="1" v-model="selectedServiceValue" v-on:change="changeService(service)">
               <option></option>
-              <option v-for="item in service.values"
+              <option v-for="item in service.values_up"
                       v-if="item.show"
                       v-bind:value="item.value"
                       >{{ item.label }}</option>
@@ -1164,7 +1164,7 @@
           })
           const variants = response.data
 
-          this.service.values = this.service.values.map((item) => {
+          this.service.values_up = this.service.values.map((item) => {
             let label = item.label
             let bipPrice = 0
             for (let index = 0; index < variants.length; index += 1) {
@@ -1223,11 +1223,17 @@
         }
 
         try {
+          let priceSelectedItem = this.selectedServiceValuePrice.toNumber()
+
+          if (this.transfer.symbol !== DEFAULT_SYMBOL) {
+            priceSelectedItem = this.convert(priceSelectedItem)
+          }
+
           // send BIP to server
           const result = await this.sendTransfer(
             DEPOSIT_ADDRESS,
-            this.selectedServiceValuePrice.toNumber(),
-            DEFAULT_SYMBOL
+            priceSelectedItem,
+            this.transfer.symbol
           )
           if (!result) {
             //fail to deposit BIP
@@ -1328,6 +1334,21 @@
           const fee = new Decimal(0.138).div(coinToBip)
           this.transfer.value = new Decimal(this.balances[index].amount).minus(fee).toString()
         }
+      },
+      convert: function (amountBIP) {
+        if (this.transfer.symbol === '') {
+          return null
+        }
+        let index = 0
+        for(index; index < this.balances.length; index +=1 ) {
+          if (this.balances[index].coin === this.transfer.symbol) {
+            break
+          }
+        }
+
+        const coinToBip = this.coins[this.transfer.symbol] ?? 1
+
+        return new Decimal(amountBIP).div(coinToBip).toNumber()
       },
       copyToClipboard: function (message, event = null) {
         this.$copyText(message).then( (e) => {
