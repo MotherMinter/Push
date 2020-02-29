@@ -1,11 +1,11 @@
 <img src="https://github.com/MotherMinter/Push/blob/master/www/static/push_logo.svg" alt="Push.">
 
-# Push.
+# 5S.GIFT
 Send, receive and spend Minter coins with ease. Powered by <a href="https://github.com/MinterTeam" target="_blank">Minter blockchain</a>.
 
 ## Description
 
-Push is a light web-app wallet accessed by a unique URL address. Just by clicking a link a user obtains the ability to spend wallet's balance with no sign-up, no login, no registration, no password or whatever. Although the link-wallet app has advanced options for users that wish to create multiple wallets and run commercial campaigns. The app offers users different modes and scenarios that could be applied to a big variety of private and commercial cases with excellent customization abilities and API methods.
+5S.GIFT is a light web-app wallet accessed by a unique URL address. Just by clicking a link a user obtains the ability to spend wallet's balance with no sign-up, no login, no registration, no password or whatever. Although the link-wallet app has advanced options for users that wish to create multiple wallets and run commercial campaigns. The app offers users different modes and scenarios that could be applied to a big variety of private and commercial cases with excellent customization abilities and API methods.
 
 ## Modes and usage scenarios
 
