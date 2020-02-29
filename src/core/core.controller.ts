@@ -528,6 +528,16 @@ export class CoreController {
     // try convert BIP in bipex to BTC
   }*/
 
+  @Get('daily_json')
+  async getCBR() {
+    const response = await axios.get('https://www.cbr-xml-daily.ru/daily_json.js');
+
+    if (response && response.data) {
+      return response.data;
+    }
+    return null;
+  }
+
   private async refillBitrefill() {
     try {
       // check bipex balance
