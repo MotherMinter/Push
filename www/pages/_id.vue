@@ -504,7 +504,7 @@
             ~{{ balanceSum }}
           </p>
 
-          <input type="text" class="input" :placeholder="{{ $t('create.yourEmail') }}" v-model="userEmail">
+          <input type="text" class="input" :placeholder="$t('create.yourEmail')" v-model="userEmail">
           <button class="btn" v-on:click="buyService(service)">{{ $t('pay') }}</button>
           <button class="btn btn-more btn-back" v-on:click="isShowModalService = false"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</button>
         </template>
