@@ -56,7 +56,7 @@ export default {
     detailSimple: 'Allows you to create a link-wallet with simple access to it just by clicking the link.',
     detailFeedback: 'Allows you to create a link-wallet that can be accessed after filling a feedback form.',
     detailAction: 'Allows you to create a link-wallet that can be accessed after completing a task by a recipient.',
-    putMoney: 'Put amount',
+    putMoney: 'Amount (optional)',
     attachMessage: 'Attach message',
     putPassword: 'Put password',
     Skins: 'Any skin',
