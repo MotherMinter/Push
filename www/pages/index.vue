@@ -258,6 +258,7 @@
                 <p :class="{'active-copy' : isCopiededSuccess}">{{ addressForFilling }}</p>
                 <div class="buttons">
                   <button :class="{'active-copy' : isCopiededSuccess}" class="btn btn-copy btn-link-copy" v-on:click="copyToClipboard(addressForFilling, $event)">Copy<img src="/assets/img/svg/copy.svg" alt=""></button>
+                  <button :class="{'active-copy' : isCopiededSuccess2}" class="btn btn-copy btn-link-copy" v-on:click="copySeedToClipboard($event)">Seed<img src="/assets/img/svg/copy.svg" alt=""></button>
                   <a v-if="this.isBalanceGreatThenZero" class="btn btn-copy" target="_blank" v-bind:href="deepLink">DeepLink</a>
                 </div>
               </div>
@@ -272,6 +273,8 @@
                 <div class="inner three"></div>
               </div>
               <p id="waiting">{{ $t('create.waitingForPayment') }} ...</p>
+
+              <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
             </div>
           </transition>
           <!-- /Content Coins Address -->
@@ -820,7 +823,15 @@
     getCoinExchangeList,
     getFiatExchangeList,
     getBipPrice,
-    prettyFormat, createCompany, DEFAULT_SYMBOL, getFiatByLocale, ACTIVATE_FEE, createDeepLink, getHash, createWalletV2
+    prettyFormat,
+    createCompany,
+    DEFAULT_SYMBOL,
+    getFiatByLocale,
+    ACTIVATE_FEE,
+    createDeepLink,
+    getHash,
+    createWalletV2,
+    getMnemonic
   } from './core'
   import { SKINS } from './skins'
   import { SPENDS } from './spendings'
@@ -861,6 +872,7 @@
         IsActiveHamburgerClass: false,
         isCopiededAdress: false,
         isCopiededSuccess: false,
+        isCopiededSuccess2: false,
         isTextarea: [true, true],
         isBodyOverflow: false,
 
@@ -1338,6 +1350,16 @@
 
         this.isCopiededSuccess = false
         return false
+      },
+      copySeedToClipboard: async function ($event = null) {
+        this.isCopiededSuccess2 = true;
+        const mnemonic = await getMnemonic(this.createParamUID, this.createParamPassword)
+        if($event) {
+          $event.target.innerText = 'Copied'
+          $event.target.classList.add('active-copy')
+        }
+
+        this.$copyText(mnemonic)
       },
       copyToClipboard: function (message, $event = null) {
         this.$copyText(message).then( (e) => {
