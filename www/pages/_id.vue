@@ -192,8 +192,8 @@
           <p v-if="!isFeedback">{{ $t('action.toReceive') }} <span>{{ balanceSumBIP }} BIP</span> <template v-if="!isShowBalanceFromCompany">(~ {{ balanceSum }})</template> {{ $t('action.afterReceiveActive') }}:</p>
           <p class="explanation" v-if="companyMsg !== ''" style="font-size: 16px;">{{ companyMsg }}</p>
           <div class="text-wrap">
-            <textarea id="ta" v-model="replyMsg" maxlength="140" v-if="isFeedback" v-bind:placeholder="$t('action.placeholder')"></textarea>
-            <textarea id="ta" v-model="replyMsg" maxlength="140" v-if="!isFeedback" v-bind:placeholder="$t('action.placeholderActive')"></textarea>
+            <textarea id="ta" v-model="replyMsg" maxlength="140" v-if="isFeedbackText" v-bind:placeholder="$t('action.placeholder')"></textarea>
+            <textarea id="ta" v-model="replyMsg" maxlength="140" v-if="!isFeedbackText" v-bind:placeholder="$t('action.placeholderActive')"></textarea>
             <div class="max-lenght" v-if="isFeedback">
               <span v-if="msgSize === maxLen">min {{ minLen }} / max {{ maxLen }}</span>
               <span v-if="msgSize !== maxLen">{{ msgSize }}</span>
@@ -566,6 +566,7 @@
         screenPassword: false,
         isNeedAction: false,
         isFeedback: true,
+        isFeedbackText: true,
         isBalanceEmpty: false,
         isCustomWallet: false,
 
@@ -766,6 +767,10 @@
             if (response.data.status === 70 || response.data.status === 71) { // new
               // this.isFeedback = (response.data.status === 70)
               this.isFeedback = true
+              if (response.data.status === 71) {
+                this.isFeedbackText = false
+              }
+
               this.isNeedAction = true
               this.screenPassword = false
               this.screenStart = false
@@ -1221,10 +1226,10 @@
       changeService: async function (service) {
         this.selectedServiceValuePrice = null
         // console.log(service, this.selectedServiceValue)
-        for (let index = 0; index < this.service.values.length; index += 1) {
-          if (this.service.values[index].value === this.selectedServiceValue) {
-            if (this.service.values[index].bipPrice) {
-              this.selectedServiceValuePrice = new Decimal(this.service.values[index].bipPrice);
+        for (let index = 0; index < this.service.values_up.length; index += 1) {
+          if (this.service.values_up[index].value === this.selectedServiceValue) {
+            if (this.service.values_up[index].bipPrice) {
+              this.selectedServiceValuePrice = new Decimal(this.service.values_up[index].bipPrice);
             }
             break
           }
@@ -1284,6 +1289,8 @@
           // success
           this.isShowLoader = false
           this.isShowModalServiceSuccess = true
+
+          this.updateBalance()
         } catch (error) {
           this.errorMsg = this.$t('errors.internalServerError')
           this.isShowError = true

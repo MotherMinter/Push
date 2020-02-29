@@ -1,7 +1,7 @@
 <template>
     <div>
         <header>
-            <a href="/" class="logo">Push.</a>
+          <a href="/" class="logo"><img src="/assets/img/svg/5sgift.svg" alt=""></a>
             <div :class="{'hamburger-active': IsActiveHamburgerClass}" class="hamburger" v-on:click="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -12,10 +12,10 @@
         </header>
         <div class="menu">
             <ul class="nav">
-                <li><a href="/">Home.</a></li>
-                <li><a href="/about.html">About.</a></li>
-                <li><a href="/account-login.html">Account.</a></li>
-                <li><a href="/choose-wallet.html">Create wallet.</a></li>
+              <li><a href="/">{{ $t('menu.home') }}.</a></li>
+              <li><a href="/about/">{{ $t('menu.about') }}.</a></li>
+              <!--<li><a href="#">{{ $t('menu.account') }}.</a></li>-->
+              <li><a href="/">{{ $t('menu.createWallet') }}.</a></li>
             </ul>
             <div class="lang-block">
                 <button class="btn lang-active"><img src="/assets/img/svg/en.svg" alt="">En</button>

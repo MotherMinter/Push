@@ -26,7 +26,7 @@ export default {
   index: {
     preTitle: 'Send Minter coins with ease.',
     title: 'Fast. Easy. Secure.',
-    btnStartSending: 'Start sending',
+    btnStartSending: 'Send coins',
   },
   menu: {
     home: 'Home',
