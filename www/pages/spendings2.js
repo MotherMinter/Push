@@ -338,11 +338,11 @@ export const SPENDS_SERVICES = [
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
       { 'value': '1500', 'label': '1500 RUB', 'show': true, },
       { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
-      { 'value': '7000', 'label': '7000 RUB', 'show': true, },
+      { 'value': '4000', 'label': '4000 RUB', 'show': true, },
+      { 'value': '6000', 'label': '6000 RUB', 'show': true, },
+      { 'value': '8000', 'label': '8000 RUB', 'show': true, },
       { 'value': '10000', 'label': '10000 RUB', 'show': true, },
-      { 'value': '15000', 'label': '15000 RUB', 'show': true, },
+      { 'value': '12000', 'label': '12000 RUB', 'show': true, },
     ]
   },
   {

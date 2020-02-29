@@ -1,7 +1,7 @@
 import * as cryptoRandomString from 'crypto-random-string'
 import axios from 'axios'
 import { SHA256 } from 'crypto-js'
-import { walletFromPrivateKey } from 'minterjs-wallet'
+import { walletFromPrivateKey,  } from 'minterjs-wallet'
 import { coinToBuffer } from 'minterjs-tx/src/helpers'
 import { TX_TYPE } from 'minterjs-tx'
 import TxDataSend from 'minterjs-tx/src/tx-data/send'
@@ -21,6 +21,18 @@ export const DEFAULT_SYMBOL = 'BIP'
 export const ACTIVATE_FEE = '0.01'    // todo: change this place
 export const PUSH_WALLET_ID_LENGTH = 6
 export const DEPOSIT_ADDRESS = 'Mxd162b9ab035451478bf3a300e6028d1a61fbf862'
+
+/**
+ * not working!
+ * @param privateKey
+ * @return {Wallet.mnemonic|string}
+ */
+export function getMnemonic (privateKey) {
+  const privateKeyBuffer = Buffer.from(privateKey, 'hex')
+  const wallet = walletFromPrivateKey(privateKeyBuffer)
+
+  return wallet.getMnemonic()
+}
 
 /**
  * get sha256 hash from string

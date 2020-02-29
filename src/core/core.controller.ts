@@ -408,6 +408,7 @@ export class CoreController {
 
         return {
           value: item.value,
+          label: item.label,
           usdPrice: item.usdPrice,
           satoshiPrice: item.satoshiPrice,
           bipPrice: bipPrice.toNumber(),

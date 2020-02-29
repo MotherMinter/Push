@@ -70,7 +70,15 @@ export class BitrefillService {
       });
       if (response.data && response.data.packages) {
         global.console.info(slug, response.data.packages);
-        return response.data.packages;
+        return response.data.packages
+          .map((item) => {
+            if (item.value.length < 7) {
+              item.label = `${item.value} ${response.data.currency}`;
+            } else {
+              item.label = item.value;
+            }
+            return item;
+          });
       }
     } catch (error) {
       global.console.error(slug, error);

@@ -31,6 +31,7 @@ export default {
   menu: {
     home: 'Home',
     about: 'About',
+    mnemonic: 'Show my private key',
     account: 'Account',
     createWallet: 'Create wallet',
   },

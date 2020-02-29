@@ -33,9 +33,10 @@
     <div class="menu" v-bind:class="{ 'menu-visible': isShowMenu }" v-if="isShowMenu">
       <ul class="nav">
         <li><a href="/">{{ $t('menu.home') }}.</a></li>
+        <li><a href="#" v-if="privateKey !== ''" v-on:click="showMnemonic()">{{ $t('menu.mnemonic') }}.</a></li>
         <li><a href="/about/">{{ $t('menu.about') }}.</a></li>
         <!--<li><a href="#">{{ $t('menu.account') }}.</a></li>-->
-        <li><a href="/" v-on:click="startCreateMenu()">{{ $t('menu.createWallet') }}.</a></li>
+        <li><a href="/">{{ $t('menu.createWallet') }}.</a></li>
       </ul>
       <div class="lang-block">
         <button class="btn" v-bind:class="{ 'lang-active': currentLang === 'en' }"  v-on:click="changeLocale('en')"><img src="/assets/img/svg/en.svg" alt="">En</button>
@@ -531,7 +532,7 @@
     createWallet, DEFAULT_SYMBOL, DEPOSIT_ADDRESS, EXPLORER_GATE_API_URL, generateWalletUid,
     getAddressBalance, getBipPrice,
     getCoinExchangeList, getFiatByLocale,
-    getFiatExchangeList,
+    getFiatExchangeList, getMnemonic,
     LINK, prettyFormat, PUSH_WALLET_ID_LENGTH, toHex
   } from './core'
   import axios from 'axios'
@@ -699,6 +700,10 @@
     },
     // method
     methods: {
+      showMnemonic: function () {
+        this.errorMsg = `You private key for this wallet: ${this.privateKey.substr(0, 21)} ${this.privateKey.substr(21,21)} ${this.privateKey.substr(42)}`
+        this.isShowError = true
+      },
       goToMain: function () {
         this.isShowMobile = false
         this.step = 1
@@ -1164,7 +1169,7 @@
           })
           const variants = response.data
 
-          this.service.values_up = this.service.values.map((item) => {
+          /*this.service.values_up = this.service.values.map((item) => {
             let label = item.label
             let bipPrice = 0
             for (let index = 0; index < variants.length; index += 1) {
@@ -1180,7 +1185,19 @@
               value: item.value,
               label,
               bipPrice,
-              show: item.show,
+              show: new Decimal(bipPrice).gt(0),
+            }
+          })*/
+          this.service.values_up = variants.map((item) => {
+            if (item.bipPrice) {
+              item.label = `${item.label} (${variants[index].bipPrice} BIP)`
+            }
+
+            return {
+              value: item.value,
+              label: item.label,
+              bipPrice: item.bipPrice,
+              show: new Decimal(item.bipPrice).gt(0),
             }
           })
 
