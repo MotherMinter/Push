@@ -26,7 +26,7 @@ export default {
   menu: {
     home: 'Главная',
     about: 'Инфо',
-    mnemonic: 'Моя секретная фраза',
+    mnemonic: 'Сид фраза',
     account: 'Аккаунт',
     createWallet: 'Создать',
   },
