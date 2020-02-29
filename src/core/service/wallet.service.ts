@@ -7,6 +7,7 @@ import { Company, Wallet } from '../entity';
 import { CompanyStatus, WalletStatus } from '../enum';
 import { WalletDto } from '../dto';
 import { WarehouseService } from './warehouse.service';
+import Decimal from 'decimal.js';
 
 const PUSH_WALLET_ID_LENGTH = 6;
 
@@ -186,9 +187,20 @@ export class WalletService {
       const amount = (params && params.amount)
         ? params.amount
         : '';
-      const symbol = (params && params.symbol)
+      let symbol = (params && params.symbol)
         ? params.symbol
         : '';
+
+      if (symbol === '' && wallet.company.warehouseWallet.balances.length > 0) {
+        let balance = new Decimal(0);
+        wallet.company.warehouseWallet.getBalances().forEach((item) => {
+          if (balance.lte(new Decimal(item.amount))) {
+            balance = new Decimal(item.amount);
+            symbol = item.coin;
+          }
+        });
+      }
+
       return this.warehouseService.transfer(
         wallet.company.warehouseWallet,
         wallet.mxaddress,
