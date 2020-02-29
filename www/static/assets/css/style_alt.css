@@ -1113,6 +1113,7 @@ header {
 }
 .modal-sevices .btn-back {
   margin-bottom: 22px;
+  padding-top: 0;
 }
 .modal-sevices .congr {
   font: 12px/1.6 "SegoeUISemiBold", sans-serif;
