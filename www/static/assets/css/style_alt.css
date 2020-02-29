@@ -2245,7 +2245,7 @@ footer {
     .content__attach-messege form input {
       display: none;
       width: 100%;
-      font: 14px/1 "SegoeUILight", sans-serif;
+      font: 16px/1 "SegoeUILight", sans-serif;
       color: var(--grey-light);
       border: none;
       padding-bottom: 14px;
