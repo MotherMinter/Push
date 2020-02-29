@@ -388,21 +388,27 @@ export class CoreController {
 
     // try create bitrefill order (store order info to DB)
     const valueList = await this.bitrefillService.checkList(params.slug);
-    if (valueList) {
+    if (valueList && valueList.length > 0) {
+      const convertInfo = await this.bipexService.getBIPSumToConvert(
+        new Decimal(valueList[0].satoshiPrice)
+          .mul(1.1)
+          .div(SAT_BTC),
+      );
+      if (!convertInfo) {
+        throw new HttpException('fail to get item info, try later', HttpStatus.INTERNAL_SERVER_ERROR);
+      }
+
       return Promise.all(valueList.map(async (item) => {
-        const convertInfo = await this.bipexService.getBIPSumToConvert(
-          new Decimal(item.satoshiPrice)
-            .mul(1.1)
-            .div(SAT_BTC),
-        );
-        if (!convertInfo) {
-          throw new HttpException('fail to get item info, try later', HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        const bipPrice = new Decimal(item.satoshiPrice)
+          .mul(1.1)
+          .div(SAT_BTC)
+          .div(convertInfo.price);
+
         return {
           value: item.value,
           usdPrice: item.usdPrice,
           satoshiPrice: item.satoshiPrice,
-          bipPrice: convertInfo.amountBIP.toNumber(),
+          bipPrice: bipPrice.toNumber(),
         };
       }));
     }

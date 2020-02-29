@@ -1165,16 +1165,23 @@
           const variants = response.data
 
           this.service.values = this.service.values.map((item) => {
+            let label = item.label
+            let bipPrice = 0
             for (let index = 0; index < variants.length; index += 1) {
               if (variants[index].value === item.value) {
                 if (variants[index].bipPrice) {
-                  item.label = `${item.label} (${variants[index].bipPrice} BIP)`
-                  item.bipPrice = variants[index].bipPrice;
+                  label = `${item.label} (${variants[index].bipPrice} BIP)`
+                  bipPrice = variants[index].bipPrice;
                 }
                 break
               }
             }
-            return item
+            return {
+              value: item.value,
+              label,
+              bipPrice,
+              show: item.show,
+            }
           })
 
           this.isShowModalService = true
