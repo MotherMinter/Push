@@ -1,6 +1,6 @@
 <img src="https://github.com/MotherMinter/Push/blob/master/www/static/push_logo.svg" alt="Push.">
 
-# 5S.GIFT
+# 5s.GIFT
 Send, receive and spend Minter coins with ease. Powered by <a href="https://github.com/MinterTeam" target="_blank">Minter blockchain</a>.
 
 ## Description
