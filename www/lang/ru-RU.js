@@ -19,7 +19,7 @@ export default {
   Example: 'Пример',
   Import: 'Импортировать',
   index: {
-    preTitle: 'Отправляй монеты с легкостью.',
+    preTitle: 'Отправляй монеты Минтера с легкостью.',
     title: 'Быстро. Надежно.',
     btnStartSending: 'Отправить монеты',
   },
@@ -86,7 +86,7 @@ export default {
     targetSpending: 'Целевая трата',
     launch: 'Запустить компанию',
     compainInfo: 'Инфо о компании',
-    yourMoneyCountHere: '5, 10, 5000 (необязательно)',
+    yourMoneyCountHere: 'Любая сумма (необазательно)',
     emailWallets: 'Сделать рассылку',
     feedbackTask: 'Задача фидбэка',
     closeCompany: 'Остановить компанию и вернуть баланс',
