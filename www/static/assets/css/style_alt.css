@@ -2929,3 +2929,11 @@ footer {
 .main-logo .main-brand span {
   font-family: "SegoeUIBold", sans-serif;
 }
+
+@media (min-width: 400px) {
+  .main .transfer-items {
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
