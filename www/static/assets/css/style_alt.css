@@ -777,12 +777,12 @@ header {
   .content__coins-address .copy_link.active-copy .btn-copy,
   .active-copy,
   .content__success .copy_link.active-copy .btn-link-copy {
-    transition: all .5s;
+    transition: all .1s;
     border-color: #63d96e;
     color: #63d96e;
   }
   .active-copy path {
-    transition: fill .5s;
+    transition: fill .1s;
     fill: #63d96e;
   }
   .btn-copy path,
@@ -795,7 +795,7 @@ header {
   }
   .content__coins-address .copy_link.active-copy p,
   .content__success .copy_link.active-copy p {
-    transition: all .5s;
+    transition: all .1s;
     color: #63d96e;
   }
   .content__coins-address .copy_link {
