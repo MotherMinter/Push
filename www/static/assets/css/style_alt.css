@@ -143,8 +143,7 @@ textarea {
   margin: 0 auto;
   margin-top: 24px;
   text-align: center;
-  background: #f4f4f4 !important;
-  padding-top: 0px; }
+  background: #f4f4f4 !important; }
   .btn-back img {
     margin-right: 6px;
     margin-bottom: -2px; }
@@ -1203,6 +1202,7 @@ header {
     background: var(--green-lighting);
     z-index: -1;
     overflow: hidden;
+    border-radius: 10px;
   }
 
 .modal-qr {
