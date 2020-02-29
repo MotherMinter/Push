@@ -8,7 +8,7 @@ import { CompanyStatus } from '../enum';
 import { WarehouseService } from './warehouse.service';
 import { WalletService } from './wallet.service';
 
-export const LINK = 'https://p.motherminter.org/';
+export const LINK = 'https://5s.gift/';
 
 @Injectable()
 export class CompanyService {

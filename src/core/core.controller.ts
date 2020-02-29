@@ -31,7 +31,7 @@ import {
 import Decimal from 'decimal.js';
 import { min } from 'rxjs/operators';
 
-const API_LINK = 'https://p.motherminter.org/';
+const API_LINK = 'https://5s.gift/';
 const SAT_BTC = 100000000;
 
 @ApiTags('api')
