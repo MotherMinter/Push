@@ -129,7 +129,7 @@ export default {
     charityFund: 'Charity|fund',
     spendSection: 'or spend them on',
     mobileService: 'Top-up|mobile',
-    games: 'Fun&|Games',
+    games: 'Online game|Time Loop',
     foodDelivery: 'NUT|loyalty',
     haveWallet: 'Does the person you send coins have a wallet address',
     createNewPush: 'Create a unique link-wallet and transfer your balance to it',
