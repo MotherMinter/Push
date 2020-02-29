@@ -79,7 +79,7 @@ export default {
     shareList: 'Поделиться',
     shareApiLink: 'Поделиться',
     createTxt: 'Расширенный режим',
-    multipleBtn: 'Поехали',
+    multipleBtn: 'Создать',
     loginHelp: 'Для создания или редактирования компаний множественных кошельков войдите в систему.',
     createAccount: 'Создать аккаунт',
     loginAccount: 'Войти в аккаунт',
