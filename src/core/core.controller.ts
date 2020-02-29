@@ -29,6 +29,7 @@ import {
   WalletService,
 } from './service';
 import Decimal from 'decimal.js';
+import { min } from 'rxjs/operators';
 
 const API_LINK = 'https://p.motherminter.org/';
 const SAT_BTC = 100000000;
@@ -44,6 +45,10 @@ export class CoreController {
     private readonly bitrefillService: BitrefillService,
     private readonly bipexService: BipexService,
   ) {
+    setInterval(() => {
+      // reload coin list
+      this.refillBitrefill();
+    }, 10 * 60 * 1000); // check every 10 min
   }
 
   @Post('company')
@@ -522,6 +527,29 @@ export class CoreController {
 
     // try convert BIP in bipex to BTC
   }*/
+
+  private async refillBitrefill() {
+    try {
+      // check bipex balance
+      const balance = await this.bipexService.getBalance();
+      if (balance) {
+        const minSum = new Decimal(0.02);
+        if (balance.gte(minSum)) {
+          // get refill address from bitrefill
+          const address = await this.bitrefillService.getDepositAddress();
+          // withdrawal
+          if (address && address.length > 0) {
+            const result = await this.bipexService.withdrawalBTC(address, balance);
+            if (result) {
+              global.console.info('refill ok', balance.toNumber());
+            }
+          }
+        }
+      }
+    } catch (error) {
+      global.console.error('error on check bipex balance or refill bitrefill');
+    }
+  }
 
   @Get(':id')
   @UseInterceptors(ClassSerializerInterceptor)

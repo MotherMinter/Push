@@ -173,4 +173,21 @@ export class BitrefillService {
     }
     return true;
   }
+
+  async getDepositAddress() {
+    /*try {
+      const response = await this.client.request({
+        url: 'accounts/deposit_address',
+        method: 'GET',
+      });
+      if (response.data && response.data.account_id) {
+        global.console.info(response.data.account_id);
+        return response.data.account_id;
+      }
+    } catch (error) {
+      global.console.error(error);
+    }
+    return false;*/
+    return this.depositAddress;
+  }
 }

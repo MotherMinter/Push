@@ -8,7 +8,6 @@ import FormData = require('form-data');
 export class BipexService {
   private authKey;
   private client;
-  private btcAddress;
 
   constructor(
     private readonly configService: ConfigService,
@@ -21,7 +20,6 @@ export class BipexService {
         'Content-Type': 'multipart/form-data',
       },
     });
-    this.btcAddress = this.configService.get<string>('BTC_ADDRESS');
   }
 
   async getBIPSumToConvert(amountBTC: Decimal, symbol: string = 'BTC') {
@@ -139,13 +137,13 @@ export class BipexService {
     return this.configService.get<string>('BIPEX_BIP_DEPOSIT_ADDRESS');
   }
 
-  async withdrawalBTC(amountBTC, symbol: string = 'BTC') {
+  async withdrawalBTC(btcAddress, amountBTC: Decimal, symbol: string = 'BTC') {
     try {
       const bodyFormData = new FormData();
       bodyFormData.append('withdraw', '1');
       bodyFormData.append('token', symbol);
       bodyFormData.append('amount', amountBTC.toString());
-      bodyFormData.append('address', this.btcAddress);
+      bodyFormData.append('address', btcAddress);
       bodyFormData.append('authkey', this.authKey);
 
       const response = await this.client.request({
@@ -163,5 +161,27 @@ export class BipexService {
       global.console.error(error);
     }
     return false;
+  }
+
+  async getBalance() {
+    try {
+      const bodyFormData = new FormData();
+      bodyFormData.append('getOrders', '1');
+      bodyFormData.append('onlyMy', '1');
+      bodyFormData.append('authkey', this.authKey);
+
+      const response = await this.client.request({
+        data: bodyFormData,
+        headers: bodyFormData.getHeaders(),
+      });
+      if (response.data && response.data.REALBALANCE) {
+        // tslint:disable-next-line:prefer-for-of
+        return new Decimal(response.data.REALBALANCE.BTC);
+      }
+    } catch (error) {
+      global.console.error(error);
+    }
+
+    return null;
   }
 }

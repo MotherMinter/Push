@@ -1190,7 +1190,7 @@
           })*/
           this.service.values_up = variants.map((item) => {
             if (item.bipPrice) {
-              item.label = `${item.label} (${variants[index].bipPrice} BIP)`
+              item.label = `${item.label} (${item.bipPrice} BIP)`
             }
 
             return {
