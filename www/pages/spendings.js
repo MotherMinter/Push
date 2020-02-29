@@ -2,31 +2,31 @@ export const SPENDS = [
   {
     'id': 'transfer',
     'ico': '/assets/img/svg/person.svg',
-    'label': 'create.anotherPerson',
+    'label': 'main.anotherPerson',
     'show': true,
   },
   {
     'id': 'yourWallet',
     'ico': '/assets/img/svg/wallet.svg',
-    'label': 'create.youWallet',
+    'label': 'main.youWallet',
     'show': true,
   },
   {
     'id': 'fund',
     'ico': '/assets/img/svg/charity.svg',
-    'label': 'create.charityFund',
+    'label': 'main.charityFund',
     'show': true,
   },
   {
     'id': 'phone',
     'ico': '/assets/img/svg/services.svg',
-    'label': 'create.mobileService',
+    'label': 'main.mobileService',
     'show': true,
   },
   {
     'id': 'games',
     'ico': '/assets/img/svg/games.svg',
-    'label': 'create.games',
+    'label': 'main.games',
     'show': true,
   },
   {
