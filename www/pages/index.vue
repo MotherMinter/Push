@@ -1416,9 +1416,10 @@
       },
       checkFilledBalance: async function () {
         try {
+          const balances = await getAddressBalance(this.addressForFilling)
+
           this.balanceSumUSD = new Decimal(0)
           this.balanceSumFiat = new Decimal(0)
-          const balances = await getAddressBalance(this.addressForFilling)
           this.balances = balances
             .filter(({ amount }) => {
               return new Decimal(amount).gt(0)
