@@ -1861,7 +1861,7 @@ footer {
     margin-bottom: 24px; }
     .content__choose-wallet-new #action img {
       margin-right: 18px;
-      margin-left: -38px;
+      margin-left: 18%;
       margin-bottom: -3px; }
   .content__choose-wallet-new #multiple {
     margin-top: 12px; }

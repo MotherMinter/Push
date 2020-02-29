@@ -95,6 +95,7 @@
 
               <h5 v-html="newLineLabel($t('create.multi'))"></h5>
               <a class="btn" id="multiple" v-on:click="showLoginModal()"><img src="/assets/img/svg/fixed_white.svg" alt="">{{ $t('create.multipleBtn') }}</a>
+              <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
             </div>
           </transition>
           <!-- /Content Choose Wallet -->

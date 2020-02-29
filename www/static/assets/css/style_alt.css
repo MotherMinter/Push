@@ -2216,21 +2216,23 @@ footer {
       background: #000; }
   .content__choose-wallet-new #feedback img {
     margin-right: 19px;
-    margin-left: -8px;
+    margin-left: 18%;
     margin-bottom: -7px; }
   .content__choose-wallet-new #action {
     margin-bottom: 24px; }
     .content__choose-wallet-new #action img {
       margin-right: 18px;
-      margin-left: -38px;
+      margin-left: 18%;
       margin-bottom: -3px; }
   .content__choose-wallet-new #multiple {
     margin-top: 12px; }
     .content__choose-wallet-new #multiple img {
       margin-right: 28px;
-      margin-left: -41px;
+      margin-left: 18%;
       margin-bottom: -9px; }
-
+.content__choose-wallet-new .btn {
+  text-align: left;
+}
 .content__attach-messege {
   padding-top: calc(50% - 180px);
   padding-top: calc(50vh - 180px); }
@@ -2624,21 +2626,24 @@ footer {
     margin-bottom: 18px; }
   .content__personal-area .btn {
     display: inline-block;
+    text-align: left;
     background: var(--blue);
     margin-bottom: 8px; }
   .content__personal-area #simple img {
     margin-right: 18px;
-    margin-left: -36px;
+    margin-left: 18%;
     margin-bottom: -3px; }
   .content__personal-area #feedback img {
     margin-right: 19px;
-    margin-left: -8px;
+    margin-left: 18%;
     margin-bottom: -7px; }
   .content__personal-area #action img {
     margin-right: 18px;
     margin-left: -38px;
     margin-bottom: -3px; }
-
+.content__personal-area .personal-data {
+  width: 100%;
+}
 .main-logo {
   padding-top: 24px; }
   .main-logo #main-logo {
