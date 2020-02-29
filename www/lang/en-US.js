@@ -1,4 +1,5 @@
 export default {
+  pay: 'pay',
   yes: 'Yes',
   YES: 'YES',
   no: 'No',

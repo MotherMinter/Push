@@ -1,4 +1,5 @@
 export default {
+  pay: 'Купить',
   yes: 'Да',
   YES: 'YES',
   no: 'Нет',

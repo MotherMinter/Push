@@ -1,18 +1,5 @@
 export const SPENDS = [
   {
-    'id': 'svyaznoj-russia',
-    'ico': '/assets/img/svg/Svayznoy.svg',
-    'label': 'Svyaznoy',
-    'desc': 'test.',
-    'show': true,
-    'bgcolor': '#4c1e87',
-    'slug': 'svyaznoj-russia',
-    'values': [
-      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
-    ]
-  },
-  {
     'id': 'transfer',
     'ico': '/assets/img/svg/person.svg',
     'label': 'main.anotherPerson',
