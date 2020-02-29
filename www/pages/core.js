@@ -1,12 +1,13 @@
 import * as cryptoRandomString from 'crypto-random-string'
 import axios from 'axios'
 import { SHA256 } from 'crypto-js'
-import { walletFromPrivateKey,  } from 'minterjs-wallet'
+import { walletFromMnemonic, walletFromPrivateKey, } from 'minterjs-wallet'
 import { coinToBuffer } from 'minterjs-tx/src/helpers'
 import { TX_TYPE } from 'minterjs-tx'
 import TxDataSend from 'minterjs-tx/src/tx-data/send'
 import { convertToPip, toBuffer } from 'minterjs-util'
 import { Decimal } from 'decimal.js'
+import * as bip39 from 'bip39'
 
 export const BACKEND_BASE_URL = 'https://p.motherminter.org'
 //export const BACKEND_BASE_URL = 'https://minterpush.ru'
@@ -23,15 +24,16 @@ export const PUSH_WALLET_ID_LENGTH = 6
 export const DEPOSIT_ADDRESS = 'Mxd162b9ab035451478bf3a300e6028d1a61fbf862'
 
 /**
- * not working!
- * @param privateKey
+ * @param uid
+ * @param password
  * @return {Wallet.mnemonic|string}
  */
-export function getMnemonic (privateKey) {
+export function getMnemonic (uid, password) {
+  const privateKey = SHA256(`${uid}${password}`).toString()
   const privateKeyBuffer = Buffer.from(privateKey, 'hex')
-  const wallet = walletFromPrivateKey(privateKeyBuffer)
+  const mnemonic = bip39.entropyToMnemonic(privateKeyBuffer)
 
-  return wallet.getMnemonic()
+  return mnemonic.toString()
 }
 
 /**
@@ -78,6 +80,24 @@ export async function createWallet (uid, password = '') {
 
   return {
     privateKey,
+    address: wallet.getAddressString(),
+  }
+}
+
+/**
+ * Create wallet pair (privateKey, mxAddress) with pbkdf2 algo
+ * @param uid
+ * @param password
+ * @return {Promise<{privateKey: string, address: string}>}
+ */
+export async function createWalletV2 (uid, password = '') {
+  const privateKey = SHA256(`${uid}${password}`).toString()
+  const privateKeyBuffer = Buffer.from(privateKey, 'hex')
+  const mnemonic = bip39.entropyToMnemonic(privateKeyBuffer)
+  const wallet = walletFromMnemonic(mnemonic)
+
+  return {
+    privateKey: wallet.getPrivateKeyString(),
     address: wallet.getAddressString(),
   }
 }

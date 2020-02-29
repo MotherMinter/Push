@@ -19,6 +19,7 @@
     "minterjs-tx": "^7.2.1",
     "minterjs-wallet": "^4.0.4",
     "minterjs-util": "^0.15.0",
+    "bip39": "^3.0.2",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.5.0",

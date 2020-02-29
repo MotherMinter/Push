@@ -135,43 +135,31 @@
           <div v-if="step === 3" class="content__item content__attach-messege content__item-active">
             <form>
 
-
               <p>{{ $t('create.putMoney') }}?</p>
-              <div class="trigger trigger-01" v-bind:class="{ 'trigger-active': isActiveTrigger01 }" v-on:click="isActiveTrigger01 = !isActiveTrigger01">
+              <input id="input-01" type="text" v-bind:placeholder="$t('create.yourMoneyCountHere')" v-model="createParamBalance" style="display: block">
+
+              <p class="options"  v-bind:class="{ 'green': isShowAdditional }">{{ $t('create.additionalOptions') }}</p>
+              <div v-on:click="isShowAdditional = !isShowAdditional" class="trigger trigger-01" v-bind:class="{ 'trigger-active': isShowAdditional }" style="margin: -3px;">
                 <span class="trigger_no">{{ $t('NO') }}</span><span class="trigger_circle"></span><span class="trigger_yes">{{ $t('YES') }}</span>
               </div>
-              <transition name="fadeDown">
-                <input id="input-01" v-if="isActiveTrigger01" type="text" v-bind:placeholder="$t('create.yourMoneyCountHere')" v-model="createParamBalance" style="display: block">
-              </transition>
 
-              <p>{{ $t('create.attachMessage') }}?</p>
-              <div class="trigger trigger-02" v-bind:class="{ 'trigger-active': isActiveTrigger02 }" v-on:click="isActiveTrigger02 = !isActiveTrigger02">
-                <span class="trigger_no">{{ $t('NO') }}</span><span class="trigger_circle"></span><span class="trigger_yes">{{ $t('YES') }}</span>
-              </div>
               <transition name="fadeDown">
-                <input id="input-02" v-if="isActiveTrigger02" type="text" v-bind:placeholder="$t('create.yourMessageHere')" v-model="createParamMessage" style="display: block">
-              </transition>
+              <div class="options-wrap" v-if="isShowAdditional" style="display: block; margin-top: 5px;">
+                <p>{{ $t('create.attachMessage') }}?</p>
+                <input id="input-02" type="text" v-bind:placeholder="$t('create.yourMessageHere')" v-model="createParamMessage" style="display: block">
 
+                <p>{{ $t('create.putPassword') }}?</p>
+                <input id="input-03" type="password" v-bind:placeholder="$t('create.yourPasswordHere')" v-model="createParamPassword" style="display: block">
 
-              <p>{{ $t('create.putPassword') }}?</p>
-              <div class="trigger trigger-03" v-bind:class="{ 'trigger-active': isActiveTrigger03 }" v-on:click="isActiveTrigger03 = !isActiveTrigger03">
-                <span class="trigger_no">{{ $t('NO') }}</span><span class="trigger_circle"></span><span class="trigger_yes">{{ $t('YES') }}</span>
-              </div>
-              <transition name="fadeDown">
-                <input id="input-03" v-if="isActiveTrigger03" type="password" v-bind:placeholder="$t('create.yourPasswordHere')" v-model="createParamPassword" style="display: block">
-              </transition>
-
-              <p>{{ $t('create.Skins') }}?</p>
-              <div class="trigger trigger-04" v-bind:class="{ 'trigger-active': isActiveTrigger04 }" v-on:click="isActiveTrigger04 = !isActiveTrigger04">
-                <span class="trigger_no">{{ $t('NO') }}</span><span class="trigger_circle"></span><span class="trigger_yes">{{ $t('YES') }}</span>
-              </div>
-              <transition name="fadeDown">
-                <div class="skins-items" id="skins" v-if="isActiveTrigger04"  style="display: block">
+                <p>{{ $t('create.Skins') }}?</p>
+                <div class="skins-items" id="skins" style="display: block">
                   <div v-for="skin in skins" class="skins__item tab__" tabindex="0" @click="isActiveTab($event)">
-                    <span v-show="skin.id != 'mday'" v-on:click="createParamSkin = skin.id">{{ skin.label }}</span><a v-on:click="showSkinPreviewModal(skin)">{{ $t('Prev') }}</a>
+                    <span v-on:click="createParamSkin = skin.id">{{ skin.label }}</span><a v-on:click="showSkinPreviewModal(skin)">{{ $t('Prev') }}</a>
                   </div>
                 </div>
+              </div>
               </transition>
+
             </form>
             <button class="btn" v-on:click="startCreateWallet()">{{ $t('goToNext') }}</button>
             <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
@@ -484,7 +472,7 @@
                 <h5>{{$t('create.compainInfo')}}</h5>
                 <div class="info">
                   <p>{{$t('create.numberWallet')}}: <span>{{createParamCount}}</span></p>
-                  <p v-if="createParamBalance">{{$t('create.oneWalletBalance')}}: <span>{{createParamBalance}} BIP</span></p>
+                  <p v-if="createParamBalance">{{$t('create.oneWalletBalance')}}: <span>{{createParamBalance}}</span></p>
                   <p>{{$t('create.targetSpending')}}:</p>
                   <ul v-if="spendChecks.length > 0">
                     <li v-for="idSpend in spendChecks" v-html="getSpendLabelById(idSpend)"></li>
@@ -832,7 +820,7 @@
     getCoinExchangeList,
     getFiatExchangeList,
     getBipPrice,
-    prettyFormat, createCompany, DEFAULT_SYMBOL, getFiatByLocale, ACTIVATE_FEE, createDeepLink, getHash
+    prettyFormat, createCompany, DEFAULT_SYMBOL, getFiatByLocale, ACTIVATE_FEE, createDeepLink, getHash, createWalletV2
   } from './core'
   import { SKINS } from './skins'
   import { SPENDS } from './spendings'
@@ -864,6 +852,7 @@
         isShowSpendModal: false,
         isShowSkinModal: false,
         isCreateOne: true,
+        isShowAdditional: false,
         isActiveTrigger01: false,
         isActiveTrigger02: false,
         isActiveTrigger03: false,
@@ -1127,7 +1116,7 @@
         return label.split('|').join(' ')
       },
       startCreateWallet: async function () {
-        if (this.isActiveTrigger01 && !this.createParamBalance) {
+        /*if (this.isActiveTrigger01 && !this.createParamBalance) {
           this.errorMsg = this.$t('errors.balanceEmpty')
           this.isShowError = true
           return false
@@ -1155,7 +1144,7 @@
         }
         if (!this.isActiveTrigger04) {
           this.createParamSkin = ''
-        }
+        }*/
 
         if ((this.step === 31 || this.step === 32) && this.createParamTask.length === 0) {
           this.errorMsg = this.$t('errors.emptyText')
@@ -1174,12 +1163,18 @@
 
         // generate wallet, start check balance
         this.createParamUID = await generateWalletUid()
-        const wallet = await createWallet(this.createParamUID, this.createParamPassword)
+        const wallet = await createWalletV2(this.createParamUID, this.createParamPassword)
         if (wallet && wallet.address) {
           this.addressForFilling = wallet.address
         } else {
           this.addressForFilling = 'empty'
         }
+
+        history.pushState(
+          {},
+          null,
+          this.$route.path + this.createParamUID
+        )
 
         this.createParamCount = 1
         // send info to server
@@ -1795,5 +1790,8 @@
   }
   skin_item_focus {
     background: var(--green-lighting);
+  }
+  .content__attach-messege .green{
+    color: #63d96e;
   }
 </style>

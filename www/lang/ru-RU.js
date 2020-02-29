@@ -26,7 +26,7 @@ export default {
   menu: {
     home: 'Главная',
     about: 'Инфо',
-    mnemonic: 'Мой приватный ключ',
+    mnemonic: 'Моя секретная фраза',
     account: 'Аккаунт',
     createWallet: 'Создать',
   },
@@ -36,6 +36,7 @@ export default {
     multi2: 'Выберите тип для новой компании',
     multi: 'Создать много кошельков',
     learnMore: 'Подробнее о типах кошельков',
+    additionalOptions: 'Дополнительные опции',
     simple: 'Простой',
     feedback: 'Фидбэк',
     action: 'Действие',

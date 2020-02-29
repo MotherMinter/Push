@@ -33,7 +33,7 @@
     <div class="menu" v-bind:class="{ 'menu-visible': isShowMenu }" v-if="isShowMenu">
       <ul class="nav">
         <li><a href="/">{{ $t('menu.home') }}.</a></li>
-        <li><a href="#" v-if="privateKey !== ''" v-on:click="showMnemonic()">{{ $t('menu.mnemonic') }}.</a></li>
+        <li><a v-if="privateKey !== ''" v-on:click="showMnemonic()">{{ $t('menu.mnemonic') }}.</a></li>
         <li><a href="/about/">{{ $t('menu.about') }}.</a></li>
         <!--<li><a href="#">{{ $t('menu.account') }}.</a></li>-->
         <li><a href="/">{{ $t('menu.createWallet') }}.</a></li>
@@ -529,7 +529,7 @@
 
   import {
     BACKEND_BASE_URL, createCompany,
-    createWallet, DEFAULT_SYMBOL, DEPOSIT_ADDRESS, EXPLORER_GATE_API_URL, generateWalletUid,
+    createWallet, createWalletV2, DEFAULT_SYMBOL, DEPOSIT_ADDRESS, EXPLORER_GATE_API_URL, generateWalletUid,
     getAddressBalance, getBipPrice,
     getCoinExchangeList, getFiatByLocale,
     getFiatExchangeList, getMnemonic,
@@ -701,7 +701,7 @@
     // method
     methods: {
       showMnemonic: function () {
-        this.errorMsg = `You private key for this wallet: ${this.privateKey.substr(0, 21)} ${this.privateKey.substr(21,21)} ${this.privateKey.substr(42)}`
+        this.errorMsg = getMnemonic(this.uid, this.password)
         this.isShowError = true
       },
       goToMain: function () {
@@ -770,7 +770,12 @@
               this.screenPassword = false
               this.screenStart = false
 
-              const wallet = await createWallet(this.uid)
+              let wallet
+              if (this.startHash === '#old') {
+                wallet = await createWallet(this.uid)
+              } else {
+                wallet = await createWalletV2(this.uid)
+              }
               this.address = wallet.address
               this.privateKey = wallet.privateKey
 
@@ -808,7 +813,13 @@
       login: async function () {
         this.isShowLoader = true
         try {
-          const wallet = await createWallet(this.uid, this.password)
+          let wallet
+          if (this.startHash === '#old') {
+            wallet = await createWallet(this.uid, this.password)
+          } else {
+            wallet = await createWalletV2(this.uid, this.password)
+          }
+
           this.privateKey = wallet.privateKey
           this.address = wallet.address
 
@@ -1041,7 +1052,7 @@
         try {
           // generate wallet, start check balance
           this.createParamUID = await generateWalletUid()
-          const wallet = await createWallet(this.createParamUID, '')
+          const wallet = await createWalletV2(this.createParamUID, '')
           // send info to server
           const company = await createCompany({
             type: 'simple',

@@ -31,7 +31,7 @@ export default {
   menu: {
     home: 'Home',
     about: 'About',
-    mnemonic: 'Show my private key',
+    mnemonic: 'Show my seed phrase',
     account: 'Account',
     createWallet: 'Create wallet',
   },
@@ -41,6 +41,7 @@ export default {
     multi: 'Create multiple wallets',
     multi2: 'Choose a type for a new campaign',
     learnMore: 'Learn more about types',
+    additionalOptions: 'Additional options',
     simple: 'Simple',
     feedback: 'Feedback',
     action: 'Action',
