@@ -60,7 +60,7 @@ export default {
     attachMessage: 'Attach message',
     putPassword: 'Put password',
     Skins: 'Any skin',
-    yourMoneyCountHere: 'Any amount, 5, 50, 1000 ...',
+    yourMoneyCountHere: '5, 50, 1000, any coins ...',
     yourMessageHere: 'Your message here...',
     yourPasswordHere: 'Your password here...',
     plzFill: 'Please send any Minter coins to this address',
