@@ -481,7 +481,7 @@
                     <li v-for="idSpend in spendChecks" v-html="getSpendLabelById(idSpend)"></li>
                   </ul>
                   <ul v-if="spendChecks.length === 0">
-                    <li v-for="spend in spends">{{ spend.label }}</li>
+                    <li v-for="spend in spends" v-html="newLineLabel($t(spend.label))"></li>
                   </ul>
                   <p v-if="createParamType === 'complex_feedback'">{{$t('create.feedbackTask')}}:</p>
                   <p class="task">{{createParamTask}} <!--<img src="/assets/img/svg/edit.svg" alt="">--></p>

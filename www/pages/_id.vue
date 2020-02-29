@@ -1289,6 +1289,8 @@
           // success
           this.isShowLoader = false
           this.isShowModalServiceSuccess = true
+
+          this.updateBalance()
         } catch (error) {
           this.errorMsg = this.$t('errors.internalServerError')
           this.isShowError = true
