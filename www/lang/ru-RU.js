@@ -116,7 +116,7 @@ export default {
     charityFund: 'Фонду|помощи',
     spendSection: 'или потратить на:',
     mobileService: 'Пополнить|телефон',
-    games: 'Игры',
+    games: 'online игра|time loop',
     foodDelivery: 'NUT',
     haveWallet: 'Есть ли у получателя адрес кошелька в сети Минтер',
     createNewPush: 'Создайте уникальный кошелек-ссылку и отправьте на него свой баланс',
