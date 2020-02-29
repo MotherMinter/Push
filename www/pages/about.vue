@@ -38,6 +38,7 @@
                             <li><a target="_blank" rel="nofollow" href="https://console.minter.network/">{{ $t('about.link3') }}</a></li>
                             <li><a target="_blank" rel="nofollow" href="https://t.me/MinterTeam">{{ $t('about.link4') }}</a></li>
                         </ul>
+                        <a class="btn btn-more btn-back" v-on:click="$router.go(-1)"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
                     </div>
                     <!-- /Content Start -->
                 </div>
@@ -45,7 +46,7 @@
         </main>
         <!-- /Content -->
         <!-- Footer -->
-        <footer>
+        <footer class="about-footer">
             <a href="https://www.minter.network/" target="_blank" class="copy">Powered by <span>Minter</span></a>
         </footer>
         <!-- /Footer -->
@@ -940,5 +941,8 @@
             opacity: 1;
             transform: translateY(0px);
         }
+    }
+    .about-footer {
+        position: static;
     }
 </style>
