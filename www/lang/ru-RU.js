@@ -87,7 +87,7 @@ export default {
     targetSpending: 'Целевая трата',
     launch: 'Создать кампанию',
     compainInfo: 'Инфо о кампании',
-    yourMoneyCountHere: 'Любая сумма (необазательно)',
+    yourMoneyCountHere: 'Любая сумма (необязательно)',
     emailWallets: 'Сделать рассылку',
     feedbackTask: 'Задача фидбэка',
     closeCompany: 'Остановить кампанию и вернуть баланс',
