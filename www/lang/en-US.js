@@ -146,6 +146,8 @@ export default {
     dobro: 'Project DOBRO. A reliable fund to help people in difficult situations.',
     dobroSuccess: 'Thank you for|your big heart!',
     gaz: 'We are waiting for the project launch from NUT - car industry loyalty programs.',
+    serviceDesc: 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    serviceSuccess: 'Congratulations, you have successfully purchased an electronic certificate!',
   },
   directLinks: {
     title: 'Direct links',

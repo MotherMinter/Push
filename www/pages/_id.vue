@@ -487,7 +487,7 @@
         </div>
       </div>
       <div class="container common-wrap">
-        <p class="use">{{ service.desc }}</p>
+        <p class="use">{{ $t('main.serviceDesc') }}</p>
         <template v-if="!isShowModalServiceSuccess">
           <div class="wrap-select">
             <select size="1" v-model="selectedServiceValue" v-on:change="changeService(service)">
@@ -508,7 +508,7 @@
           <button class="btn" v-on:click="buyService(service)">{{ $t('pay') }}</button>
           <button class="btn btn-more btn-back" v-on:click="isShowModalService = false"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</button>
         </template>
-        <p class="congr" v-if="isShowModalServiceSuccess">Congratulations, you have successfully purchased an electronic certificate!</p>
+        <p class="congr" v-if="isShowModalServiceSuccess">{{ $t('main.serviceSuccess') }}</p>
       </div>
     </div>
     <!-- /Service -->
