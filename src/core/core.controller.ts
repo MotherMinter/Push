@@ -396,7 +396,7 @@ export class CoreController {
     if (valueList && valueList.length > 0) {
       const convertInfo = await this.bipexService.getBIPSumToConvert(
         new Decimal(valueList[0].satoshiPrice)
-          .mul(1.1)
+          .mul(1.03)
           .div(SAT_BTC),
       );
       if (!convertInfo) {
@@ -405,7 +405,7 @@ export class CoreController {
 
       return Promise.all(valueList.map(async (item) => {
         const bipPrice = new Decimal(item.satoshiPrice)
-          .mul(1.1)
+          .mul(1.03)
           .div(SAT_BTC)
           .div(convertInfo.price)
           .floor()
@@ -455,7 +455,7 @@ export class CoreController {
     if (order && order.orders && order.orders.length > 0) {
       // add fee for convertation
       const amountBTC = new Decimal(order.satoshiPrice)
-        .mul(1.1)
+        .mul(1.03)
         .div(SAT_BTC)
       ;
       // if success, try calculate BTC > BIP (bipex)
@@ -543,7 +543,7 @@ export class CoreController {
       // check bipex balance
       const balance = await this.bipexService.getBalance();
       if (balance) {
-        const minSum = new Decimal(0.02);
+        const minSum = new Decimal(0.05);
         if (balance.gte(minSum)) {
           // get refill address from bitrefill
           const address = await this.bitrefillService.getDepositAddress();
