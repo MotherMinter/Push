@@ -733,6 +733,7 @@
         this.isShowMessage = false
       },
       openPasswordPage: function () {
+        this.isShowLoader = false
         this.screenPassword = true
         this.screenStart = false
       },
@@ -813,7 +814,6 @@
           console.error(error)
           this.openPasswordPage()
         }
-        this.isShowLoader = false
       },
       login: async function () {
         this.isShowLoader = true
@@ -913,7 +913,7 @@
           const self = this
           setTimeout(() => {
             self.updateBalance()
-          }, 7*1000)
+          }, 10*1000)
         }
         return false
       },
@@ -966,13 +966,13 @@
             this.nonce = Number(response.data.data.nonce) + 1
           }
 
-        if (!this.isBalanceEmpty && this.balanceSumBIP.lte(0)) {
+        /*if (!this.isBalanceEmpty && this.balanceSumBIP.lte(0)) {
           this.isBalanceEmpty = true;
           const self = this
           setTimeout(() => {
             self.updateBalance()
           }, 7*1000)
-        }
+        }*/
         } catch (error) {
           console.error(error)
           // this.errorMsg = error.message
@@ -1176,6 +1176,7 @@
 
       },
       showServiceAlert: async function (service) {
+        this.isShowLoader = true
         this.service = service
 
         try {
@@ -1222,6 +1223,7 @@
           this.errorMsg = this.$t('errors.internalServerError')
           this.isShowError = true
         }
+        this.isShowLoader = false
       },
       changeService: async function (service) {
         this.selectedServiceValuePrice = null
