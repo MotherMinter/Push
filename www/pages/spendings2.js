@@ -92,7 +92,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/playstation.png',
     'label': 'PlayStation',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
+    'show': false,
     'bgcolor': '#f5f5f5',
     'slug': 'playstation-russia',
     'values': [
