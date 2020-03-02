@@ -1074,6 +1074,7 @@ header {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+  z-index: -1;
 }
 .modal-sevices .wrap-select:focus:after {
   -webkit-transform: rotate(-135deg);
@@ -1090,6 +1091,7 @@ header {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background: none;
 }
 .modal-sevices .wrap-select select option {
   border: none;
