@@ -2812,6 +2812,9 @@ footer {
   width: 42px;
   margin-left: -12px;
 }
+.main #perekrestok-russia img {
+  width: 90%;
+}
 /* .main #steam-eur-international {
   background: #1f191a;
 }
