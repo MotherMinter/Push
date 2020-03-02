@@ -17,6 +17,23 @@ export const SPENDS_SERVICES = [
   ]
   },
   {
+    'id': 'perekrestok-russia',
+    'ico': '/assets/img/perekrestok.png',
+    'label': 'Перекресток',
+    'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
+    'show': true,
+    'bgcolor': '#f5f5f5',
+    'slug': 'perekrestok-russia',
+    'values': [
+      { 'value': '500', 'label': '500 RUB', 'show': true, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
+  ]
+  },
+  {
     'id': 'svyaznoj-russia',
     'ico': '/assets/img/svg/Svayznoy.svg',
     'label': 'Svyaznoy',
