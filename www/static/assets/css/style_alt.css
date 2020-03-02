@@ -1023,6 +1023,7 @@ header {
   background: #003295;
 }
 .modal-sevices .modal-header img {
+  max-width: 290px;
   max-height: 100px;
 }
 .modal-sevices .modal-header .close-modal {
