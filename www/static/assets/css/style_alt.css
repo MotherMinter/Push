@@ -94,11 +94,6 @@ textarea {
   box-sizing: border-box;
 }
 
-.container-medium {
-  max-width: 375px;
-  margin: 0 auto;
-}
-
 .btn {
   width: 100%;
   height: 60px;
