@@ -154,7 +154,7 @@ export async function getCoinExchangeList () {
 
 export async function getCoinExchangeListV2 () {
   try {
-    const response = await axios.get(`${BACKEND_BASE_URL}/api/v1/coins`)
+    const response = await axios.get(`${BACKEND_BASE_URL}/api/coins`)
     if (response.data && response.data) {
       const coins = []
 
