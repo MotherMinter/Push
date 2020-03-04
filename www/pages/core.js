@@ -159,7 +159,7 @@ export async function getCoinExchangeListV2 () {
       const coins = []
 
       await response.data.forEach((coin) => {
-        coins[coin.symbol] = new Decimal(coin.price)
+        coins[coin.symbol] = coin.price
       })
 
       return coins
