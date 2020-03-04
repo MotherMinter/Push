@@ -56,32 +56,7 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import VueClipboard from 'vue-clipboard2'
-  import axios from 'axios'
-  import VueQrcode from '@chenfengyuan/vue-qrcode'
-  import { Decimal } from 'decimal.js'
-
-  import {
-    LINK,
-    BACKEND_BASE_URL,
-    createWallet,
-    generateWalletUid,
-    getAddressBalance,
-    getCoinExchangeList,
-    getFiatExchangeList,
-    getBipPrice,
-    prettyFormat, createCompany, DEFAULT_SYMBOL, getFiatByLocale, ACTIVATE_FEE
-  } from './core'
-
-  if (process.client) {
-    Vue.use(VueClipboard)
-  }
-
   export default {
-    components: {
-      //qrcode: VueQrcode,
-    },
     data () {
       return {
         step: 1,
