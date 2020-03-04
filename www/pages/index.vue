@@ -41,7 +41,7 @@
 
           <!-- Content Start -->
           <transition name="fade">
-          <div v-if="step === 1" class="content__item content__start content__item-active">
+          <div v-if="step === 1" class="content__item content__start content__item-active s1">
             <p>{{ $t('index.preTitle') }}</p>
             <h1>{{ $t('index.title') }}</h1>
             <a class="btn" v-on:click="startCreateSimple()">{{ $t('index.btnStartSending') }}</a>
@@ -64,30 +64,7 @@
 
           <!-- Content Choose Wallet -->
           <transition name="fade">
-          <!--<div v-if="step === 2" class="content__item content__choose-wallet content__item-active step-2">
-            <h5 v-html="newLineLabel($t('create.title'))"></h5>
-            <div class="buttons">
-              <button v-on:click="isCreateOne = true" class="btn btn-radio" v-bind:class="{ 'btn-radio__active': isCreateOne }">
-                <span class="outer"><span class="internal"></span></span>{{ $t('create.one') }}
-              </button>
-              <button v-on:click="isCreateOne = false" class="btn btn-radio" v-bind:class="{ 'btn-radio__active': !isCreateOne }">
-                <span class="outer"><span class="internal"></span></span>{{ $t('create.multi') }}
-              </button>
-            </div>
-            <a class="more-about" v-on:click="toggleShowType()">{{ $t('create.learnMore') }}</a>
-            <div>
-              <div class="buttons-one" v-show="isCreateOne">
-                <a class="btn" id="simple" v-on:click="startCreateSimple()"><img src="/assets/img/svg/wallet_light.svg" alt="">{{ $t('create.simple') }}</a>
-                <a class="btn" id="feedback" v-on:click="startCreateFeedback()"><img src="/assets/img/svg/feedback.svg" alt="">{{ $t('create.feedback') }}</a>
-                <a class="btn" id="action" v-on:click="startCreateAction()"><img src="/assets/img/svg/action.svg" alt="">{{ $t('create.action') }}</a>
-              </div>
-              <div class="buttons-multiple" v-show="!isCreateOne" style="display: block;">
-                <a class="btn" id="simple" v-on:click="startCreateSimple()"><img src="/assets/img/svg/wallet_light.svg" alt="">{{ $t('create.simple') }}</a>
-                <a class="btn" id="feedback" v-on:click="startCreateFeedback()"><img src="/assets/img/svg/feedback.svg" alt="">{{ $t('create.feedback') }}</a>
-              </div>
-            </div>
-          </div>-->
-            <div v-if="step === 2" class="content__item content__choose-wallet-new content__item-active step-2">
+            <div v-if="step === 2" class="content__item content__choose-wallet-new content__item-active step-2 s2">
               <h5 v-html="newLineLabel($t('create.one'))"></h5>
               <a class="more-about" v-on:click="toggleShowType()">{{ $t('create.learnMore') }}</a>
               <a class="btn" id="feedback" v-on:click="startCreateFeedback()"><img src="/assets/img/svg/feedback.svg" alt="">{{ $t('create.feedback') }}</a>
@@ -102,7 +79,7 @@
 
           <transition name="fade">
             <!-- Content Personal Area -->
-            <div v-if="step === 21"  class="content__item content__personal-area content__item-active">
+            <div v-if="step === 21"  class="content__item content__personal-area content__item-active s21">
               <div class="capaing-info">
                 <div class="campaing-logo">
                   <a href="#" class="more-about">Logo</a>
@@ -133,7 +110,7 @@
 
           <!-- Content Attach Messege -->
           <transition name="fade">
-          <div v-if="step === 3" class="content__item content__attach-messege content__item-active">
+          <div v-if="step === 3" class="content__item content__attach-messege content__item-active s3">
             <form>
 
               <p>{{ $t('create.putMoney') }}</p>
@@ -170,7 +147,7 @@
 
           <!-- Content Describe Feedback -->
           <transition name="fade">
-          <div v-if="step === 31" class="content__item content__describe-action content__item-active content__item-active">
+          <div v-if="step === 31" class="content__item content__describe-action content__item-active content__item-active s31">
             <p>{{ $t('create.feedbackTitle') }}</p>
             <div class="text-wrap">
               <textarea id="ta" name="" maxlength="140" v-bind:placeholder="$t('create.feedbackPlaceholder')" @input="inputValue(0, $event)" v-model="createParamTask"></textarea>
@@ -188,7 +165,7 @@
 
           <!-- Content Describe Action -->
           <transition name="fade">
-          <div v-if="step === 32" class="content__item content__describe-action content__item-active content__item-active">
+          <div v-if="step === 32" class="content__item content__describe-action content__item-active content__item-active s32">
             <p>{{ $t('create.actionTitle') }}</p>
             <div class="text-wrap">
               <textarea id="ta" name="" maxlength="140" v-bind:placeholder="$t('create.actionPlaceholder')" @input="inputValue(1, $event)" v-model="createParamTask"></textarea>
@@ -204,55 +181,9 @@
           </transition>
           <!-- /Content Describe Action -->
 
-          <!-- Content Type Wallet -->
-          <transition name="fade">
-          <div v-if="step === 6" class="content__item content__type-wallet content__item-active">
-            <h1>{{ $t('create.numberCreate') }}?</h1>
-            <a class="more-about" v-on:click="toggleShowNType()">{{ $t('create.learnMore') }}</a>
-            <a class="btn" v-on:click="startCreateMultiFixed()"><img src="/assets/img/svg/fixed_1.svg" alt="">{{ $t('Fixed') }}</a>
-            <a class="btn" v-on:click="startCreateMultiUnlim()"><img src="/assets/img/svg/unlimited_1.svg" alt="">{{ $t('Unlimited') }}</a>
-
-            <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
-          </div>
-          </transition>
-          <!-- /Content Type Wallet -->
-
-          <!-- Content Form multiply simple unlim  -->
-          <transition name="fade">
-          <div v-if="step === 7" class="content__item content__form content__item-active">
-            <p class="unlimited" v-if="!createParamIsFixed">{{ $t('create.numberWalletUnlim') }}</p>
-            <input type="text" v-if="createParamIsFixed" class="input" v-bind:placeholder="$t('create.numberWallet')" v-model="createParamCount">
-
-            <input type="text" class="input" v-bind:placeholder="$t('create.oneWalletBalance')" v-model="createParamBalance">
-            <!--<input type="text" class="input" v-bind:placeholder="$t('create.numberWallet')" placeholder="Message (optional)">-->
-            <input type="text" class="input" v-bind:placeholder="$t('create.yourEmail')" v-model="createParamEmail">
-            <input type="password" class="input" v-bind:placeholder="$t('create.passToCompany')" v-model="createParamCompanyPass">
-            <button class="btn" v-on:click="startCreateCompanyParams()">{{ $t('goToNext') }}</button>
-            <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
-          </div>
-          </transition>
-          <!-- /Content Form -->
-
-          <!-- Content Describe Feedback -->
-          <transition name="fade">
-            <div v-if="step === 71" class="content__item content__describe-action content__item-active content__item-active">
-              <p>{{ $t('create.feedbackTitle') }}</p>
-              <div class="text-wrap">
-                <textarea id="ta" name="" maxlength="140" v-bind:placeholder="$t('create.feedbackPlaceholder')" v-model="createParamTask"></textarea>
-                <div class="max-lenght">
-                  <span id="max_lenght">{{ msgSize }}</span>
-                  <img src="/assets/img/svg/feedback_grey.svg" alt="">
-                </div>
-              </div>
-              <button class="btn" v-on:click="startCreateCompany()">{{ $t('goToNext') }}</button>
-              <a class="btn btn-more btn-back" v-on:click="goBack()"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</a>
-            </div>
-          </transition>
-          <!-- /Content Describe Feedback -->
-
           <!-- Content Coins Address -->
           <transition name="fade">
-            <div v-if="step === 4" class="content__item content__coins-address content__item-active">
+            <div v-if="step === 4" class="content__item content__coins-address content__item-active s4">
               <h5 v-if="!this.isBalanceGreatThenZero">{{ $t('create.plzFill') }}</h5>
               <h5 v-if="this.isBalanceGreatThenZero">{{ $t('create.plzFillPart1') }} <span v-on:click="copyToClipboard(minNewBalance)">{{ minNewBalance }} {{ $t('create.minBalanceCoin')}}</span> {{ $t('create.plzFillPart2') }}</h5>
               <div class="copy_link">
@@ -282,7 +213,7 @@
 
           <!-- Content Success -->
           <transition name="fade">
-          <div v-if="step === 5" class="content__item content__success content__item-active">
+          <div v-if="step === 5" class="content__item content__success content__item-active s5">
             <h1>{{ $t('success') }}!</h1>
             <p>{{ $t('create.willReceive') }}:</p>
             <div class="score">
@@ -307,7 +238,7 @@
 
           <!-- Content Success Fixed -->
           <transition name="fade">
-          <div v-if="step === 51" class="content__item content__success content__success-multiple content__item-active">
+          <div v-if="step === 51" class="content__item content__success content__success-multiple content__item-active s51">
             <h1>{{ $t('success') }}!</h1>
             <p v-if="createParamIsFixed">{{ createParamCount }} <span v-html="newLineLabel($t('create.successFixed'))"></span></p>
             <p v-if="!createParamIsFixed" v-html="newLineLabel($t('create.successUnlim'))">:</p>
@@ -384,7 +315,7 @@
 
           <transition name="fade">
             <!-- Content Personal Area -->
-            <div v-if="step === 61 || step === 62" class="content__item content__feedback-simple content__item-active">
+            <div v-if="step === 61 || step === 62" class="content__item content__feedback-simple content__item-active s61-62">
 
               <template v-if="typeof addressForFilling !== 'undefined' && addressForFilling.length > 10">
               <h5>{{ $t('compaingWallet') }}</h5>
@@ -439,7 +370,7 @@
 
           <transition name="fade">
             <!-- Content Personal Area -->
-            <div v-if="step === 80" class="content__item content__campaing-wallet content__item-active">
+            <div v-if="step === 80" class="content__item content__campaing-wallet content__item-active s80">
 
               <template v-if="typeof addressForFilling !== 'undefined' && addressForFilling.length > 10">
                 <h5>{{ $t('compaingWallet') }}</h5>
@@ -494,60 +425,16 @@
 
                   <div class="buttons grab">
                     <button v-if="createParamIsFixed" id="send" class="btn btn-copy" v-on:click="sendListToEmail($event)">{{ $t('create.sendEmail') }}
-                      <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: #4a40fd;
-                              fill-rule: evenodd;
-                            }
-                          </style>
-                        </defs>
-                        <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M1894.63,3187h-15.26a2.313,2.313,0,0,0-2.37,2.25v11.5a2.313,2.313,0,0,0,2.37,2.25h15.26a2.32,2.32,0,0,0,2.37-2.25v-11.5A2.32,2.32,0,0,0,1894.63,3187Zm0,14.01h-15.26a0.331,0.331,0,0,1-.36-0.26v-10.11l6.9,5.75a0.775,0.775,0,0,0,.51.18h1.16a0.775,0.775,0,0,0,.51-0.18l6.9-5.75v10.11A0.331,0.331,0,0,1,1894.63,3201.01Zm-7.63-6.41-6.71-5.61h13.42Z" transform="translate(-1877 -3187)"/>
-                      </svg>-->
                       <img src="/assets/img/svg/email-2.svg" alt="">
                       </button>
                     <button v-if="!createParamIsFixed" id="send" class="btn btn-copy" v-on:click="sendLinkToEmail($event)">{{ $t('create.sendApiEmail') }}
-                      <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: #4a40fd;
-                              fill-rule: evenodd;
-                            }
-                          </style>
-                        </defs>
-                        <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M1894.63,3187h-15.26a2.313,2.313,0,0,0-2.37,2.25v11.5a2.313,2.313,0,0,0,2.37,2.25h15.26a2.32,2.32,0,0,0,2.37-2.25v-11.5A2.32,2.32,0,0,0,1894.63,3187Zm0,14.01h-15.26a0.331,0.331,0,0,1-.36-0.26v-10.11l6.9,5.75a0.775,0.775,0,0,0,.51.18h1.16a0.775,0.775,0,0,0,.51-0.18l6.9-5.75v10.11A0.331,0.331,0,0,1,1894.63,3201.01Zm-7.63-6.41-6.71-5.61h13.42Z" transform="translate(-1877 -3187)"/>
-                      </svg>-->
                       <img src="/assets/img/svg/email-2.svg" alt="">
                       </button>
 
                     <button v-if="createParamIsFixed" id="save" class="btn btn-copy" v-on:click="copyList($event)">{{ $t('create.copyList') }}
-                      <!--<svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: #4a40fd;
-                              fill-rule: evenodd;
-                            }
-                          </style>
-                        </defs>
-                        <path id="Rounded_Rectangle_6" data-name="Rounded Rectangle 6" class="cls-1" d="M860,2138h-2v2a2,2,0,0,1-2,2H846a2,2,0,0,1-2-2v-14a2,2,0,0,1,2-2h2v-2a2,2,0,0,1,2-2h10a2,2,0,0,1,2,2v14A2,2,0,0,1,860,2138Zm-12-2v-10h-1a1,1,0,0,0-1,1v12a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1v-1h-6A2,2,0,0,1,848,2136Zm12-13a1,1,0,0,0-1-1h-8a1,1,0,0,0-1,1v12a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1v-12Z" transform="translate(-844 -2120)"/>
-                      </svg>-->
                       <img src="/assets/img/svg/copy.svg" alt="">
                     </button>
                     <button v-if="!createParamIsFixed" id="copy" class="btn btn-copy" v-on:click="copyUrlSuccess($event)">{{ $t('create.copyLink') }}
-                      <!--<svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: #4a40fd;
-                              fill-rule: evenodd;
-                            }
-                          </style>
-                        </defs>
-                        <path id="Rounded_Rectangle_6" data-name="Rounded Rectangle 6" class="cls-1" d="M860,2138h-2v2a2,2,0,0,1-2,2H846a2,2,0,0,1-2-2v-14a2,2,0,0,1,2-2h2v-2a2,2,0,0,1,2-2h10a2,2,0,0,1,2,2v14A2,2,0,0,1,860,2138Zm-12-2v-10h-1a1,1,0,0,0-1,1v12a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1v-1h-6A2,2,0,0,1,848,2136Zm12-13a1,1,0,0,0-1-1h-8a1,1,0,0,0-1,1v12a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1v-12Z" transform="translate(-844 -2120)"/>
-                      </svg>-->
                       <img src="/assets/img/svg/copy.svg" alt="">
                     </button>
 
@@ -619,22 +506,6 @@
       </div>
     </transition>
     <!-- /Modal Activation Types 1 -->
-
-    <!-- Modal Activation Types-->
-    <transition name="fade">
-    <div class="modal-alert modal-activation-types modal-type2" v-bind:class="{ 'modal-activation-types-active': isShowModalNType }" v-show="isShowModalNType">
-        <div class="container">
-            <div class="close-modal-alert" v-on:click="toggleShowNType()">
-            <span></span><span></span>
-          </div>
-          <p class="title"><img src="/assets/img/svg/fixed_1.svg" alt="">{{ $t('Fixed') }}</p>
-          <p v-html="$t('create.fixedDetail')"></p>
-          <p class="title"><img src="/assets/img/svg/unlimited_1.svg" alt="">{{ $t('Unlimited') }}</p>
-          <p v-html="$t('create.unlimDetail')"></p>
-        </div>
-    </div>
-    </transition>
-    <!-- /Modal Activation Types -->
 
     <!-- Modal QR -->
     <div class="modal-alert modal-qr" v-bind:class="{ 'modal-activation-qr': isShowModalQR }" v-if="isShowModalQR">
@@ -818,7 +689,6 @@
   import {
     LINK,
     BACKEND_BASE_URL,
-    createWallet,
     generateWalletUid,
     getAddressBalance,
     getCoinExchangeList,
@@ -856,7 +726,6 @@
         isShowMenu: false,
         isShowModalType1: false,
         isShowModalType2: false,
-        isShowModalNType: false,
         isShowModalQR: false,
         isShowModalDir: false,
         isShowLoginModal: false,
@@ -1014,9 +883,6 @@
       toggleShowType2: function () {
         this.isShowModalType2 = !this.isShowModalType2
       },
-      toggleShowNType: function () {
-        this.isShowModalNType = !this.isShowModalNType
-      },
       toggleShowQR: function (link = 'empty') {
         this.isShowModalQR = !this.isShowModalQR
         this.qrLink = link
@@ -1074,7 +940,6 @@
           this.step = 3
           this.createParamType = 'simple'
         } else {
-          //this.step = 6
           this.step = 61
           this.createParamType = 'complex'
         }
@@ -1088,7 +953,6 @@
           this.step = 31
           this.createParamType = 'simple_feedback'
         } else {
-          // this.step = 6
           this.step = 62
           this.createParamType = 'complex_feedback'
         }
@@ -1104,20 +968,6 @@
         }
         return false
       },
-      startCreateMultiFixed: function () {
-        this.createParamIsFixed = true
-        this.createParamCount = ''
-        this.prevStep.push(this.step)
-        this.step = 7
-        return false
-      },
-      startCreateMultiUnlim: function () {
-        this.createParamIsFixed = false
-        this.createParamCount = 0
-        this.prevStep.push(this.step)
-        this.step = 7
-        return false
-      },
       goBack: function () {
         this.step = this.prevStep.pop()
         return false
@@ -1129,36 +979,6 @@
         return label.split('|').join(' ')
       },
       startCreateWallet: async function () {
-        /*if (this.isActiveTrigger01 && !this.createParamBalance) {
-          this.errorMsg = this.$t('errors.balanceEmpty')
-          this.isShowError = true
-          return false
-        }
-        if (!this.isActiveTrigger01) {
-          this.createParamBalance = ''
-        }
-
-        if (this.isActiveTrigger02 && !this.createParamMessage) {
-          this.errorMsg = this.$t('errors.emptyText')
-          this.isShowError = true
-          return false
-        }
-        if (!this.isActiveTrigger02) {
-          this.createParamMessage = ''
-        }
-
-        if (this.isActiveTrigger03 && !this.createParamPassword) {
-          this.errorMsg = this.$t('errors.passErrorEmpty')
-          this.isShowError = true
-          return false
-        }
-        if (!this.isActiveTrigger03) {
-          this.createParamPassword = ''
-        }
-        if (!this.isActiveTrigger04) {
-          this.createParamSkin = ''
-        }*/
-
         if ((this.step === 31 || this.step === 32) && this.createParamTask.length === 0) {
           this.errorMsg = this.$t('errors.emptyText')
           this.isShowError = true
@@ -1227,38 +1047,6 @@
         }, 3 * 1000)
 
         return false
-      },
-      startCreateCompanyParams: async function () {
-        if (!this.createParamBalance) {
-          this.errorMsg = this.$t('errors.balanceEmpty')
-          this.isShowError = true
-          return false
-        }
-
-        if (!this.createParamCount && this.createParamIsFixed) {
-          this.errorMsg = this.$t('errors.countEmpty')
-          this.isShowError = true
-          return false
-        }
-
-        if (!this.validateEmail(this.createParamEmail)) {
-          this.errorMsg = this.$t('errors.failEmail')
-          this.isShowError = true
-          return false
-        }
-
-        if (!this.createParamCompanyPass) {
-          this.errorMsg = this.$t('errors.passErrorEmpty')
-          this.isShowError = true
-          return false
-        }
-
-        if (this.createParamType === 'complex_feedback') {
-          this.prevStep.push(this.step)
-          this.step = 71
-        } else {
-          this.startCreateCompany()
-        }
       },
       startCreateCompany: async function () {
         if (this.createParamType === 'complex_feedback' && this.createParamTask.length === 0) {
@@ -1338,8 +1126,6 @@
           }
           return false
         }
-        // todo: hide loader
-
         clearInterval(this.checkInterval)
         this.prevStep.push(this.step)
 
