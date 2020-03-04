@@ -20,6 +20,7 @@ export class WarehouseService {
   private explorerURL;
   private nodeUrl;
   private coins;
+  private coinsForUser;
 
   constructor(
     @InjectRepository(Warehouse)
@@ -47,6 +48,7 @@ export class WarehouseService {
       const response = await axios.get(`${this.explorerURL}/api/v1/coins`);
       if (response.data && response.data.data) {
         this.coins = [];
+        this.coinsForUser = [];
 
         response.data.data.map((coin) => {
           // Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
@@ -63,6 +65,10 @@ export class WarehouseService {
             this.coins[coin.symbol] = new Decimal(coin.reserveBalance)
               .mul(new Decimal(1).minus(as1c1))
               .mul(99.8).toNumber();
+            this.coinsForUser.push({
+              symbol: coin.symbol,
+              price: this.coins[coin.symbol],
+            });
           }
         });
 
@@ -71,6 +77,10 @@ export class WarehouseService {
     } catch (error) {
       global.console.error(error);
     }
+  }
+
+  getCoins() {
+    return this.coinsForUser;
   }
 
   async create(): Promise<Warehouse> {

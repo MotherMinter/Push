@@ -491,7 +491,7 @@
     BACKEND_BASE_URL, createCompany,
     createWallet, createWalletV2, DEFAULT_SYMBOL, DEPOSIT_ADDRESS, EXPLORER_GATE_API_URL, generateWalletUid,
     getAddressBalance, getBipPrice,
-    getCoinExchangeList, getFiatByLocale,
+    getCoinExchangeList, getCoinExchangeListV2, getFiatByLocale,
     getFiatExchangeList, getMnemonic,
     LINK, prettyFormat, PUSH_WALLET_ID_LENGTH, toHex
   } from './core'
@@ -978,7 +978,7 @@
               this.isShowLoader = false
             })
         }*/
-        this.coins = await getCoinExchangeList()
+        this.coins = await getCoinExchangeListV2()
       },
       // application
       showTransfer: function () {

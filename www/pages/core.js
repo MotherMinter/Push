@@ -152,6 +152,25 @@ export async function getCoinExchangeList () {
   return []
 }
 
+export async function getCoinExchangeListV2 () {
+  try {
+    const response = await axios.get(`${BACKEND_BASE_URL}/api/v1/coins`)
+    if (response.data && response.data) {
+      const coins = []
+
+      await response.data.forEach((coin) => {
+        coins[coin.symbol] = new Decimal(coin.price)
+      })
+
+      return coins
+    }
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
 /**
  * Get BIP price in $
  * @return {Promise<Decimal>}

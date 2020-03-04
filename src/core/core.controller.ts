@@ -26,7 +26,7 @@ import {
   CompanyService,
   LINK,
   PartnerService,
-  WalletService,
+  WalletService, WarehouseService,
 } from './service';
 import Decimal from 'decimal.js';
 import { min } from 'rxjs/operators';
@@ -44,6 +44,7 @@ export class CoreController {
     private readonly accountService: AccountService,
     private readonly bitrefillService: BitrefillService,
     private readonly bipexService: BipexService,
+    private readonly warehouseService: WarehouseService,
   ) {
     setInterval(() => {
       // reload coin list
@@ -536,6 +537,11 @@ export class CoreController {
       return response.data;
     }
     return null;
+  }
+
+  @Get('coins')
+  async getCoins() {
+    return this.warehouseService.getCoins();
   }
 
   private async refillBitrefill() {
