@@ -62,7 +62,7 @@
             font: 36px/1.4 'SegoeUIBlack', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #fff;
+            color: #000;
         }
         .skins p {
             font: 16px/1.4 'SegoeUIBold', sans-serif;
@@ -89,24 +89,26 @@
             margin: 0;
             padding: 0;
         }
-        .fon-wrap {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          background: linear-gradient(to bottom, #6e529d 0%, #d97b93 100%);
-          overflow: hidden;
-          z-index: -1;
-        }
-        .fon-block {
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          width: 10em;
-          height: 10em;
-          transform: rotate(45deg);
-          margin: 2em;
-          float: left;
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-        }
-
+		
+		body {
+		  background: -webkit-gradient(linear, left top, right top, from(red), to(cyan));
+		  background: linear-gradient(90deg, red, cyan);
+		  min-height: 100vh
+		}
+		body:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+			right: 0;
+				-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+				-webkit-mask-image: linear-gradient(to bottom, transparent, black);
+						mask-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+						mask-image: linear-gradient(to bottom, transparent, black);
+				background: -webkit-gradient(linear, left top, right top, from(hotpink), to(#639));
+				background: linear-gradient(90deg, hotpink, #639);	
+		  }
     </style>
 </head>
 <body>
@@ -120,30 +122,7 @@
                 <button class="btn" onclick="parent.hideSkin();">Grab present</button>
             </div>
          </div>
-         <div class="fon-wrap">
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-            <div class="fon-block"></div>
-         </div>
     </main>
-    <canvas id="heart"></canvas>
     <!-- /Skins -->
     <!-- /Page -->
     <script>
