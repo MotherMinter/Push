@@ -415,5 +415,10 @@
     <!-- /Skins -->
     <!-- /Page -->
     <!-- Scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        document.getElementById('message').innerHTML  = parent.skinMessage() || '';
+      })
+    </script>
 </body>
 </html>
