@@ -146,5 +146,10 @@
     <canvas id="heart"></canvas>
     <!-- /Skins -->
     <!-- /Page -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        document.getElementById('message').innerHTML  = parent.skinMessage() || '';
+      })
+    </script>
 </body>
 </html>
