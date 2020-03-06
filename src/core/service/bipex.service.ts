@@ -52,7 +52,7 @@ export class BipexService {
         }
       }
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bipex', error);
 
       return null;
     }
@@ -91,7 +91,7 @@ export class BipexService {
             const depositSum = new Decimal(item.dat).mul(1.05);
             const txResponse = await axios.get(`https://explorer-api.minter.network/api/v1/transactions/${item.tx}`);
             if (txResponse && txResponse.data && txResponse.data.data) {
-              global.console.log(amountBIP.toString(), depositSum.toString(), txResponse.data.data.from);
+              global.console.log((new Date()).toISOString(), 'bipex', amountBIP.toString(), depositSum.toString(), txResponse.data.data.from);
               if (txResponse.data.data.from === addressFrom && depositSum.gte(amountBIP)) {
                 return true;
               }
@@ -100,7 +100,7 @@ export class BipexService {
         }
       }
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bipex', error);
     }
 
     return false;
@@ -126,9 +126,9 @@ export class BipexService {
         return true;
       }
 
-      global.console.error(response.data);
+      global.console.error((new Date()).toISOString(), 'bipex', response.data);
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bipex', error);
     }
     return false;
   }
@@ -156,9 +156,9 @@ export class BipexService {
         return true;
       }
 
-      global.console.error(response.data);
+      global.console.error((new Date()).toISOString(), 'bipex', response.data);
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bipex', error);
     }
     return false;
   }
@@ -179,7 +179,7 @@ export class BipexService {
         return new Decimal(response.data.REALBALANCE.BTC);
       }
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bipex', error);
     }
 
     return null;

@@ -430,85 +430,88 @@ export class CoreController {
   @UseInterceptors(ClassSerializerInterceptor)
   @ApiOperation({ description: 'Try create bitrefill order'})
   async tryCreateBitrefillOrder(@Param() params, @Body() walletData: WalletDto, @Body() body) {
-    let wallet;
-    if (walletData.custom) {
-      wallet = await this.walletService.custom(null, params.id, walletData);
-      if (!wallet) {
-        throw new HttpException('need login', HttpStatus.UNAUTHORIZED);
-      }
-    } else {
-      wallet = await this.walletService.login(params.id, walletData);
-    }
-
-    // try create bitrefill order (store order info to DB)
-    const orderParams = {
-      operatorSlug: body.slug,
-      valuePackage: body.value,
-      count: 1,
-      giftInfo: {
-        recipientName: 'User',
-        senderName: 'Come (push wallet)',
-        message: '',
-        recipientEmail: body.recipientEmail,
-      },
-    };
-    const order = await this.bitrefillService.createPreOrder(orderParams);
-    if (order && order.orders && order.orders.length > 0) {
-      // add fee for convertation
-      const amountBTC = new Decimal(order.satoshiPrice)
-        .mul(1.03)
-        .div(SAT_BTC)
-      ;
-      // if success, try calculate BTC > BIP (bipex)
-      const convertInfo = await this.bipexService.getBIPSumToConvert(amountBTC);
-
-      // check hash
-      const txHash = body.hash;
-      for (let attempt = 0; attempt < 20; attempt += 1) {
-        const checkResult = await this.warehouseService.getTxInfo(txHash);
-        if (checkResult !== false) {
-          const txValue = new Decimal(checkResult.data.value);
-          if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
-            break;
-          } else {
-            throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
-          }
+    try {
+      let wallet;
+      if (walletData.custom) {
+        wallet = await this.walletService.custom(null, params.id, walletData);
+        if (!wallet) {
+          throw new HttpException('need login', HttpStatus.UNAUTHORIZED);
         }
-        await this.delay(1000); // 1 sec
+      } else {
+        wallet = await this.walletService.login(params.id, walletData);
       }
-      // buy cert in bitrefill
-      const orderId = await this.bitrefillService.createOrder({
+
+      // try create bitrefill order (store order info to DB)
+      const orderParams = {
         operatorSlug: body.slug,
         valuePackage: body.value,
-        email: body.recipientEmail,
-      });
-      const buyResult = await this.bitrefillService.paymentOrder(orderId);
+        count: 1,
+        giftInfo: {
+          recipientName: 'User',
+          senderName: 'Come (push wallet)',
+          message: '',
+          recipientEmail: body.recipientEmail,
+        },
+      };
+      const order = await this.bitrefillService.createPreOrder(orderParams);
+      if (order && order.orders && order.orders.length > 0) {
+        // add fee for convertation
+        const amountBTC = new Decimal(order.satoshiPrice)
+          .mul(1.03)
+          .div(SAT_BTC)
+        ;
+        // if success, try calculate BTC > BIP (bipex)
+        const convertInfo = await this.bipexService.getBIPSumToConvert(amountBTC);
 
-      // check balans up on bipex for this sum
-      let depositSuccess = false;
-      for (let attempt = 0; attempt < 10; attempt += 1) {
-        depositSuccess = await this.bipexService.checkDepositSum(wallet.mxaddress, convertInfo.amountBIP);
-        if (depositSuccess) {
-          break;
+        // check hash
+        const txHash = body.hash;
+        for (let attempt = 0; attempt < 20; attempt += 1) {
+          const checkResult = await this.warehouseService.getTxInfo(txHash);
+          if (checkResult !== false) {
+            const txValue = new Decimal(checkResult.data.value);
+            if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
+              break;
+            } else {
+              throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+          }
+          await this.delay(1000); // 1 sec
         }
-        await this.delay(3 * 1000); // 3 sec
-      }
-      if (!depositSuccess) {
-        throw new HttpException('fail deposit BIP', HttpStatus.INTERNAL_SERVER_ERROR);
-      }
+        // buy cert in bitrefill
+        const orderId = await this.bitrefillService.createOrder({
+          operatorSlug: body.slug,
+          valuePackage: body.value,
+          email: body.recipientEmail,
+        });
+        const buyResult = await this.bitrefillService.paymentOrder(orderId);
 
-      // buy BTC
-      const status = await this.bipexService.createBuyOrder(convertInfo.amountBIP, convertInfo.price);
-      if (status) {
-        // buy btc success -> pay for item
-        if (buyResult) {
-          return JSON.stringify({
-            status: 'ok',
-          });
+        // check balans up on bipex for this sum
+        let depositSuccess = false;
+        for (let attempt = 0; attempt < 10; attempt += 1) {
+          depositSuccess = await this.bipexService.checkDepositSum(wallet.mxaddress, convertInfo.amountBIP);
+          if (depositSuccess) {
+            break;
+          }
+          await this.delay(3 * 1000); // 3 sec
+        }
+        if (!depositSuccess) {
+          throw new HttpException('fail deposit BIP', HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        // buy BTC
+        const status = await this.bipexService.createBuyOrder(convertInfo.amountBIP, convertInfo.price);
+        if (status) {
+          // buy btc success -> pay for item
+          if (buyResult) {
+            return JSON.stringify({
+              status: 'ok',
+            });
+          }
         }
       }
+    } catch (error) {
+      global.console.log((new Date()).toISOString(), error);
     }
-
     throw new HttpException('fail to create order', HttpStatus.INTERNAL_SERVER_ERROR);
   }
 

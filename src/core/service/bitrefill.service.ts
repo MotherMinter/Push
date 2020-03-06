@@ -69,7 +69,7 @@ export class BitrefillService {
         method: 'GET',
       });
       if (response.data && response.data.packages) {
-        global.console.info(slug, response.data.packages);
+        global.console.log((new Date()).toISOString(), 'bitrefill', slug, response.data.packages);
         return response.data.packages
           .map((item) => {
             if (item.value.length < 7) {
@@ -81,7 +81,7 @@ export class BitrefillService {
           });
       }
     } catch (error) {
-      global.console.error(slug, error);
+      global.console.error((new Date()).toISOString(), 'bitrefill', slug, error);
     }
     return false;
   }
@@ -100,20 +100,20 @@ export class BitrefillService {
           paymentMethod: 'dashboard',
         },
       });
-      global.console.info(orderParams, response.data);
+      global.console.log((new Date()).toISOString(), 'bitrefill', orderParams, response.data);
 
       if (response.data && response.data.status === 'unpaid' && response.data.id) {
         return response.data;
       }
     } catch (error) {
-      global.console.error(orderParams, error);
+      global.console.error((new Date()).toISOString(), 'bitrefill', orderParams, error);
     }
     return false;
   }
 
   async createOrder(params) {
     if (!params.operatorSlug || !params.valuePackage) {
-      global.console.error('fail to create bitrefill order for', params);
+      global.console.error((new Date()).toISOString(), 'bitrefill', 'fail to create bitrefill order for', params);
       return false;
     }
 
@@ -122,16 +122,16 @@ export class BitrefillService {
         url: 'order',
         data: params,
       });
-      global.console.info(response.data);
+      global.console.log((new Date()).toISOString(), 'bitrefill', response.data);
 
       if (response.data && response.data.status === 'unpaid') {
         // store and return order information
         return response.data.id;
       }
 
-      global.console.error(response.data);
+      global.console.error((new Date()).toISOString(), 'bitrefill', response.data);
     } catch (error) {
-      global.console.error(error);
+      global.console.error((new Date()).toISOString(), 'bitrefill', error);
     }
     return null;
   }
@@ -159,7 +159,7 @@ export class BitrefillService {
 
   async paymentOrder(orderId) {
     if (!orderId) {
-      global.console.error('fail to create bitrefill order for', orderId);
+      global.console.error((new Date()).toISOString(), 'bitrefill', 'fail to create bitrefill order for', orderId);
       return false;
     }
 
@@ -167,9 +167,9 @@ export class BitrefillService {
       const response = await this.clientApi.request({
           url: `order/${orderId}/purchase`,
         });
-      global.console.info(orderId, response.data);
+      global.console.log((new Date()).toISOString(), 'bitrefill', orderId, response.data);
     } catch (error) {
-      global.console.info(orderId);
+      global.console.log((new Date()).toISOString(), 'bitrefill', orderId);
     }
     return true;
   }
