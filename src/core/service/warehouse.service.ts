@@ -248,9 +248,11 @@ export class WarehouseService {
 
       throw new Error(msg);
     }
-    global.console.info(`Transfer from ${mxaddress}. txHash: ${response.data.result.hash}`);
+
+    const hash = `Mt${response.data.result.hash.toLowerCase()}`;
+    global.console.info(`Transfer from ${mxaddress}. txHash: ${hash}`);
     return {
-      hash: response.data.result.hash,
+      hash,
     };
   }
 
