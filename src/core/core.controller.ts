@@ -461,6 +461,29 @@ export class CoreController {
       ;
       // if success, try calculate BTC > BIP (bipex)
       const convertInfo = await this.bipexService.getBIPSumToConvert(amountBTC);
+
+      // check hash
+      const txHash = body.hash;
+      for (let attempt = 0; attempt < 20; attempt += 1) {
+        const checkResult = await this.warehouseService.getTxInfo(txHash);
+        if (checkResult !== false) {
+          const txValue = new Decimal(checkResult.data.value);
+          if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
+            break;
+          } else {
+            throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
+          }
+        }
+        await this.delay(1000); // 1 sec
+      }
+      // buy cert in bitrefill
+      const orderId = await this.bitrefillService.createOrder({
+        operatorSlug: body.slug,
+        valuePackage: body.value,
+        email: body.recipientEmail,
+      });
+      const buyResult = await this.bitrefillService.paymentOrder(orderId);
+
       // check balans up on bipex for this sum
       let depositSuccess = false;
       for (let attempt = 0; attempt < 10; attempt += 1) {
@@ -478,14 +501,7 @@ export class CoreController {
       const status = await this.bipexService.createBuyOrder(convertInfo.amountBIP, convertInfo.price);
       if (status) {
         // buy btc success -> pay for item
-        const orderId = await this.bitrefillService.createOrder({
-          operatorSlug: body.slug,
-          valuePackage: body.value,
-          email: body.recipientEmail,
-        });
-        const result = await this.bitrefillService.paymentOrder(orderId);
-
-        if (result) {
+        if (buyResult) {
           return JSON.stringify({
             status: 'ok',
           });

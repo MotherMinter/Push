@@ -1225,12 +1225,12 @@
           }
 
           // send BIP to server
-          const result = await this.sendTransfer(
+          const hash = await this.sendTransfer(
             DEPOSIT_ADDRESS,
             priceSelectedItem,
             this.transfer.symbol
           )
-          if (!result) {
+          if (hash === false) {
             //fail to deposit BIP
             this.errorMsg = this.$t('errors.internalServerError')
             this.isShowError = true
@@ -1238,7 +1238,7 @@
           }
           this.isShowLoader = true
           // wait transaction
-          await this.sleep(10 * 1000)
+          // await this.sleep(10 * 1000)
 
           // try create order
           const order = await axios.post(`${BACKEND_BASE_URL}/api/${this.uid}/services/bitrefill/`, {
@@ -1247,6 +1247,7 @@
             slug: service.slug,
             value: this.selectedServiceValue,
             recipientEmail: this.userEmail,
+            hash: this.hash,
           })
           // success
           this.isShowLoader = false
@@ -1285,15 +1286,17 @@
           const serializedTx = tx.serialize().toString('hex')
 
           // send to back
-          const txHash = await axios.post(`${BACKEND_BASE_URL}/api/${this.uid}/send`, {
+          const result = await axios.post(`${BACKEND_BASE_URL}/api/${this.uid}/send`, {
             mxaddress: this.address,
             custom: this.isCustomWallet,
             rawTx: serializedTx,
           })
 
-          this.nonce += 1
-          this.isShowLoader = false
-          return true
+          if (result.data.hash) {
+            this.nonce += 1
+            this.isShowLoader = false
+            return result.data.hash
+          }
         } catch (error) {
           console.error(error)
           this.errorMsg = this.$t('errors.sendError')

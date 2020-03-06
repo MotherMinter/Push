@@ -234,7 +234,7 @@ export class WarehouseService {
     }
   }
 
-  async sendRawTx(mxaddress, rawTx: string): Promise<string> {
+  async sendRawTx(mxaddress, rawTx: string): Promise<Object> {
     const response = await this.minterApi.get(`send_transaction?tx=0x${rawTx}`);
     if (response.data.error) {
       let msg = response.data.error.message;
@@ -249,6 +249,20 @@ export class WarehouseService {
       throw new Error(msg);
     }
     global.console.info(`Transfer from ${mxaddress}. txHash: ${response.data.result.hash}`);
-    return response.data.result.hash;
+    return {
+      hash: response.data.result.hash,
+    };
+  }
+
+  /**
+   * get transaction info by hash
+   * @param hash
+   */
+  async getTxInfo(hash: string) {
+    const response = await axios.get(`${this.explorerURL}/api/v1/transactions/${hash}`);
+    if (response.data && response.data.data) {
+      return response.data.data;
+    }
+    return false;
   }
 }
