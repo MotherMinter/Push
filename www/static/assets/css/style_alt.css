@@ -1674,7 +1674,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px; }
   .skins p {
-    font: 16px/1.4 'SegoeUIBold', sans-serif;
+    font: 20px/1.4 'SegoeUIBold', sans-serif;
     margin: 32px 0; }
   .skins .btn {
     background: var(--pink); }
