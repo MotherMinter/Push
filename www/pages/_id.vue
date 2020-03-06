@@ -1247,7 +1247,7 @@
             slug: service.slug,
             value: this.selectedServiceValue,
             recipientEmail: this.userEmail,
-            hash: this.hash,
+            hash,
           })
           // success
           this.isShowLoader = false
@@ -1257,6 +1257,7 @@
         } catch (error) {
           this.errorMsg = this.$t('errors.internalServerError')
           this.isShowError = true
+          this.isShowLoader = false
         }
       },
       sendTransfer: async function (to, value, symbol, payload = null) {
@@ -1295,6 +1296,8 @@
           if (result.data.hash) {
             this.nonce += 1
             this.isShowLoader = false
+
+            console.log('txHash', result.data.hash)
             return result.data.hash
           }
         } catch (error) {
