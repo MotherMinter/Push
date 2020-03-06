@@ -466,14 +466,18 @@ export class CoreController {
         // check hash
         const txHash = body.hash;
         for (let attempt = 0; attempt < 20; attempt += 1) {
-          const checkResult = await this.warehouseService.getTxInfo(txHash);
-          if (checkResult !== false) {
-            const txValue = new Decimal(checkResult.data.value);
-            if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
-              break;
-            } else {
-              throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
+          try {
+            const checkResult = await this.warehouseService.getTxInfo(txHash);
+            if (checkResult !== false) {
+              const txValue = new Decimal(checkResult.data.value);
+              if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
+                break;
+              } else {
+                throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
+              }
             }
+          } catch (error) {
+            global.console.error('check tx hash', txHash, attempt);
           }
           await this.delay(1000); // 1 sec
         }
@@ -488,9 +492,13 @@ export class CoreController {
         // check balans up on bipex for this sum
         let depositSuccess = false;
         for (let attempt = 0; attempt < 10; attempt += 1) {
-          depositSuccess = await this.bipexService.checkDepositSum(wallet.mxaddress, convertInfo.amountBIP);
-          if (depositSuccess) {
-            break;
+          try {
+            depositSuccess = await this.bipexService.checkDepositSum(wallet.mxaddress, convertInfo.amountBIP);
+            if (depositSuccess) {
+              break;
+            }
+          }  catch (error) {
+            global.console.error('bipex check', wallet.mxaddress, convertInfo.amountBIP.toString(), attempt);
           }
           await this.delay(3 * 1000); // 3 sec
         }
