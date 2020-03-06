@@ -157,7 +157,7 @@ export class WalletService {
     return true;
   }
 
-  async send(wallet: Wallet, rawTx: string): Promise<string> {
+  async send(wallet: Wallet, rawTx: string) {
     return this.warehouseService.sendRawTx(wallet.mxaddress, rawTx);
   }
 

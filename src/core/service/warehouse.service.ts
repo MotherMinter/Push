@@ -234,7 +234,7 @@ export class WarehouseService {
     }
   }
 
-  async sendRawTx(mxaddress, rawTx: string): Promise<Object> {
+  async sendRawTx(mxaddress, rawTx: string) {
     const response = await this.minterApi.get(`send_transaction?tx=0x${rawTx}`);
     if (response.data.error) {
       let msg = response.data.error.message;

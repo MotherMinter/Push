@@ -344,7 +344,7 @@ export class CoreController {
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(ClassSerializerInterceptor)
   @ApiOperation({ description: 'Send raw signed transaction to network'})
-  async send(@Param() params, @Body() walletData: WalletDto, @Body() body): Promise<string> {
+  async send(@Param() params, @Body() walletData: WalletDto, @Body() body) {
     let wallet;
     if (walletData.custom) {
       wallet = await this.walletService.custom(null, params.id, walletData);
