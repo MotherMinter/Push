@@ -468,7 +468,7 @@
           <button class="btn" v-on:click="buyService(service)">{{ $t('pay') }}</button>
           <button class="btn btn-more btn-back" v-on:click="isShowModalService = false"><img src="/assets/img/svg/back.svg" alt="">{{ $t('back') }}</button>
         </template>
-        <p class="congr" v-if="isShowModalServiceSuccess">{{ $t('main.serviceSuccess') }}</p>
+        <p class="congr" v-if="isShowModalServiceSuccess" style="color: #63d96e;">{{ $t('main.serviceSuccess') }}</p>
       </div>
     </div>
     <!-- /Service -->
