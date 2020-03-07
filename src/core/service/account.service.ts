@@ -54,7 +54,7 @@ export class AccountService {
     try {
       account = await this.accountRepository.findOneOrFail({ email, password: passwordHash }, { relations: ['companies'] });
     } catch (error) {
-      global.console.error({ error, data: email });
+      // global.console.error('error get account', email);
       throw new HttpException('Bad password', HttpStatus.UNAUTHORIZED);
     }
 

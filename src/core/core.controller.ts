@@ -470,7 +470,10 @@ export class CoreController {
             const checkResult = await this.warehouseService.getTxInfo(txHash);
             if (checkResult !== false) {
               const txValue = new Decimal(checkResult.data.value);
-              if (checkResult.from === wallet.mxaddress && txValue.gte(convertInfo.amountBIP)) {
+              const depositAddress = await this.bipexService.getDepositAddress();
+              if (checkResult.from === wallet.mxaddress
+                && checkResult.data.to === depositAddress
+                && txValue.gte(convertInfo.amountBIP)) {
                 break;
               } else {
                 throw new HttpException('fail to create order, error hash', HttpStatus.INTERNAL_SERVER_ERROR);
