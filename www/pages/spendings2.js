@@ -4,7 +4,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/yafood.png',
     'label': 'Яндекс.Еда',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'yandeks_eda-russia',
     'values': [
@@ -21,7 +21,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/perekrestok.png',
     'label': 'Перекресток',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'perekrestok-russia',
     'values': [
@@ -38,7 +38,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Svayznoy.svg',
     'label': 'Svyaznoy',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#4c1e87',
     'slug': 'svyaznoj-russia',
     'values': [
@@ -51,7 +51,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/SportMaster.svg',
     'label': 'Спортмастер',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#003295',
     'slug': 'sportmaster-russia',
     'values': [
@@ -75,7 +75,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Detskiy_mir.svg',
     'label': 'Детский мир',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#0073e6',
     'slug': 'detskij-mir-russia',
     'values': [
@@ -98,10 +98,10 @@ export const SPENDS_SERVICES = [
     'bgcolor': '#1f191a',
     'slug': 'steam-eur-international',
     'values': [
-      { 'value': '10', 'label': '10 EUR', 'show': false, },
-      { 'value': '20', 'label': '20 EUR', 'show': false, },
+      { 'value': '10', 'label': '10 EUR', 'show': true, },
+      { 'value': '20', 'label': '20 EUR', 'show': true, },
       { 'value': '50', 'label': '50 EUR', 'show': true, },
-      { 'value': '100', 'label': '100 EUR', 'show': false, },
+      { 'value': '100', 'label': '100 EUR', 'show': true, },
     ]
   },
   {
@@ -122,7 +122,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/tutu.png',
     'label': 'Tutu',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'tutu_ru-russia',
     'values': [
@@ -144,7 +144,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Sunlight.svg',
     'label': 'SUNLIGHT',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#d34c47',
     'slug': 'sunlight-russia',
     'values': [
@@ -157,7 +157,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/ivi.png',
     'label': 'IVI',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#e6003f',
     'slug': 'onlajn-kinoteatr-ivi-russia',
     'values': [
@@ -179,7 +179,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Amediateka.svg',
     'label': 'Amediateka',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#1f191a',
     'slug': 'amediateka-russia',
     'values': [
@@ -194,14 +194,14 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Apple.svg',
     'label': 'App Store & iTunes',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#369af5',
     'slug': 'itunes-russia',
     'values': [
       { 'value': '300', 'label': '300 RUB', 'show': true, },
       { 'value': '500', 'label': '500 RUB', 'show': true, },
-      { 'value': '1000', 'label': '1000 RUB', 'show': false, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': false, },
+      { 'value': '1000', 'label': '1000 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
     ]
   },
   {
@@ -209,7 +209,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/modi.png',
     'label': 'Modi Fun Shop',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'modi-fun-shop-russia',
     'values': [
@@ -223,7 +223,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Decathlon.svg',
     'label': 'DECATHLON',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#1482c2',
     'slug': 'decathlon-russia',
     'values': [
@@ -237,7 +237,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Togas.svg',
     'label': 'Togas',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#1f191a',
     'slug': 'togas-russia',
     'values': [
@@ -250,7 +250,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Hoff.svg',
     'label': 'HOFF',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#cd352a',
     'slug': 'hoff-russia',
     'values': [
@@ -263,7 +263,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Pandora.svg',
     'label': 'PANDORA',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'pandora-russia',
     'values': [
@@ -276,13 +276,13 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/WorldOfTanks.svg',
     'label': 'World of Tanks',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#1f191a',
     'slug': 'world-of-tanks-russia',
     'values': [
       { 'value': '30 days premium account', 'label': '30 days premium account', 'show': true, },
       { 'value': '500 Gold + 7 days premium account + SU-100Y tank', 'label': '500 Gold + 7 days premium account + SU-100Y tank', 'show': true, },
-      { 'value': '2800 Gold + M4A1 Revalorisé tank', 'label': '2800 Gold + M4A1 Revalorisé tank', 'show': false, },
+      { 'value': '2800 Gold + M4A1 Revalorisé tank', 'label': '2800 Gold + M4A1 Revalorisé tank', 'show': true, },
     ]
   },
   {
@@ -290,7 +290,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Litres.svg',
     'label': 'Litres.ru',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#efeee9',
     'slug': 'litres-russia',
     'values': [
@@ -302,14 +302,14 @@ export const SPENDS_SERVICES = [
       { 'value': '500', 'label': '500 RUB', 'show': true, },
       { 'value': '750', 'label': '750 RUB', 'show': true, },
       { 'value': '1000', 'label': '1000 RUB', 'show': true, },
-      { 'value': '1500', 'label': '1500 RUB', 'show': false, },
-      { 'value': '2000', 'label': '2000 RUB', 'show': false, },
-      { 'value': '2500', 'label': '2500 RUB', 'show': false, },
-      { 'value': '3000', 'label': '3000 RUB', 'show': false, },
-      { 'value': '3500', 'label': '3500 RUB', 'show': false, },
-      { 'value': '4000', 'label': '4000 RUB', 'show': false, },
-      { 'value': '4500', 'label': '4500 RUB', 'show': false, },
-      { 'value': '5000', 'label': '5000 RUB', 'show': false, },
+      { 'value': '1500', 'label': '1500 RUB', 'show': true, },
+      { 'value': '2000', 'label': '2000 RUB', 'show': true, },
+      { 'value': '2500', 'label': '2500 RUB', 'show': true, },
+      { 'value': '3000', 'label': '3000 RUB', 'show': true, },
+      { 'value': '3500', 'label': '3500 RUB', 'show': true, },
+      { 'value': '4000', 'label': '4000 RUB', 'show': true, },
+      { 'value': '4500', 'label': '4500 RUB', 'show': true, },
+      { 'value': '5000', 'label': '5000 RUB', 'show': true, },
     ]
   },
   {
@@ -317,7 +317,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/enaza.png',
     'label': 'Эназа-Игры',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#c62525',
     'slug': 'enaza-igry-wildlands-russia',
     'values': [
@@ -329,7 +329,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/dynaton.png',
     'label': 'DYNATONE',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'dynatone-russia',
     'values': [
@@ -348,7 +348,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/korabli.png',
     'label': 'Кораблик',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'korablik-russia',
     'values': [
@@ -367,7 +367,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/Modis.png',
     'label': 'MODIS',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#0093d3',
     'slug': 'modis-russia',
     'values': [
@@ -388,7 +388,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Podrujka.svg',
     'label': 'Подружка',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'podruzhka-russia',
     'values': [
@@ -405,7 +405,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Lush.svg',
     'label': 'LUSH',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#1f191a',
     'slug': 'lush-russia',
     'values': [
@@ -421,7 +421,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/blackstar.png',
     'label': 'Black Star Wear',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f5f5f5',
     'slug': 'black-star-wear-russia',
     'values': [
@@ -442,7 +442,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Zoozavr.svg',
     'label': 'Зоозавр',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#e5e700',
     'slug': 'zoozavr-russia',
     'values': [
@@ -458,7 +458,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Adamas.svg',
     'label': 'АДАМАС',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#00968a',
     'slug': 'adamas-russia',
     'values': [
@@ -475,7 +475,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/dochki_sinochk.png',
     'label': 'Дочки-Сыночки',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': false,
+    'show': true,
     'bgcolor': '#f6dc34',
     'slug': 'dochki-synochki-russia',
     'values': [
