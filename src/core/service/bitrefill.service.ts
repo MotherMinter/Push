@@ -80,6 +80,7 @@ export class BitrefillService {
             return item;
           });
       }
+      global.console.error((new Date()).toISOString(), 'bitrefill', slug, response.data);
     } catch (error) {
       global.console.error((new Date()).toISOString(), 'bitrefill', slug, error);
     }
