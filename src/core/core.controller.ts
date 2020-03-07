@@ -401,7 +401,7 @@ export class CoreController {
           .div(SAT_BTC),
       );
       if (!convertInfo) {
-        throw new HttpException('fail to get item info, try later', HttpStatus.INTERNAL_SERVER_ERROR);
+        throw new HttpException('fail to get item info, try later (price)', HttpStatus.INTERNAL_SERVER_ERROR);
       }
 
       return Promise.all(valueList.map(async (item) => {
