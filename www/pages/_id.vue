@@ -1271,7 +1271,7 @@
           const txParams = {
             nonce: String('0x' + toHex(this.nonce)),
             chainId: '0x01',
-            gasPrice: '0x02',
+            gasPrice: '0x01',
             gasCoin: coinToBuffer(symbol),
             type: TX_TYPE.SEND,
             data: txData.serialize(),
