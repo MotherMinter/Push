@@ -75,7 +75,7 @@ export const SPENDS_SERVICES = [
     'ico': '/assets/img/svg/Detskiy_mir.svg',
     'label': 'Детский мир',
     'desc': 'You can spend coins on this electronic certificate. Just pick the amount and insert your email. You\'ll receive the certificate after successful payment.',
-    'show': true,
+    'show': false,
     'bgcolor': '#0073e6',
     'slug': 'detskij-mir-russia',
     'values': [
