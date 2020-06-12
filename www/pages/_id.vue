@@ -87,7 +87,9 @@
       <div v-show="step === 1" class="container-medium">
         <div class="main">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}
+            <template v-if="balance.coin != transfer.symbol"><a class="btn btn-sm use-it-btb" v-on:click="useIt(balance)">Use it</a></template>
+          </p>
           <p class="currency">~{{ balanceSum }}</p>
 
           <template  v-if="(spendChecks.includes('games') || spendChecks.includes('phone') || spendChecks.includes('fuel') || spendChecks.includes('transfer') || spendChecks.includes('yourWallet') || spendChecks.includes('fund')) || spendChecks.length === 0">
@@ -170,7 +172,8 @@
       <div v-show="step === 2" class="container">
         <div class="another-persone common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <!--<p class="transfer">{{ $t('main.transferSection') }}</p>-->
           <img class="icon" src="/assets/img/svg/person.svg" alt="">
@@ -186,7 +189,8 @@
       <div v-show="step === 22" class="container">
         <div class="another-persone another-persone__dont-wallet common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/person.svg" alt="">
           <p class="insert">{{ $t('main.createNewPush') }}</p>
@@ -200,7 +204,8 @@
       <div v-show="step === 21" class="container">
         <div class="another-persone another-persone__dont-wallet common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/person.svg" alt="">
           <p class="insert">{{ $t('main.insertAddress') }}:</p>
@@ -237,7 +242,8 @@
       <div v-show="step === 3" class="container">
         <div class="your-wallet another-persone__dont-wallet common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/wallet.svg" alt="">
           <p class="insert">{{ $t('main.insertAddress') }}:</p>
@@ -252,7 +258,8 @@
       <div v-show="step === 4" class="container">
         <div class="mobile-services common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/services.svg" alt="">
           <p class="insert">{{ $t('main.mobileTitle') }}:</p>
@@ -273,7 +280,8 @@
       <div v-show="step === 5" class="container">
         <div class="games common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/games.svg" alt="">
           <p class="description">{{ $t('main.timeloop') }}</p>
@@ -287,7 +295,8 @@
       <div v-show="step === 6" class="container">
         <div class="charity-fund common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/charity.svg" alt="">
           <p class="description">{{ $t('main.dobro') }}</p>
@@ -301,7 +310,8 @@
       <div v-show="step === 115" class="container">
         <div class="charity-fund common-wrap">
           <h1>{{ $t('main.youBalance') }}:</h1>
-          <p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>
+          <!--<p class="balance" v-for="balance in balances">{{ balance.amount }} {{ balance.coin }}</p>-->
+          <p class="balance">{{ transfer.value }} {{ transfer.symbol }}</p>
           <p class="currency">~{{ balanceSum }}</p>
           <img class="icon" src="/assets/img/svg/fuel.svg" alt="">
           <p class="description">{{ $t('main.gaz') }}</p>
@@ -909,7 +919,7 @@
                   this.balanceSumUSD = this.balanceSumUSD.plus(usdAmount)
                 }
 
-                this.transfer.value = amount
+                this.transfer.value = prettyFormat(amount)
                 this.transfer.symbol = coin
               }
 
@@ -979,6 +989,10 @@
             })
         }*/
         this.coins = await getCoinExchangeListV2()
+      },
+      useIt: function (balance) {
+        this.transfer.value = balance.amount
+        this.transfer.symbol = balance.coin
       },
       // application
       showTransfer: function () {
@@ -1562,5 +1576,17 @@
     .footer-static {
       position: static !important;
     }
+  }
+  .use-it-btb {
+    background-color: #fff;
+    color: #000;
+    width: 100px;
+    height: 30px;
+    font-size: 10pt;
+    box-shadow: 1px 2px 6px 2px rgba(184, 195, 212, 0.4);
+    text-align: center;
+    top: -3px;
+    padding: 5px 12px;
+    margin: 0;
   }
 </style>
