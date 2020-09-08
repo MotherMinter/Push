@@ -652,10 +652,15 @@
       balanceSum() {
         const fiatVal = getFiatByLocale(this.currentLang)
         const fiatSymbol = fiatVal ? fiatVal.symbol : ''
+        const discount = new Decimal(0.8);
         if (this.currentLang === 'en') {
-          return `${this.balanceSumUSD.toFixed(2)} $`
+          const sum = new Decimal(this.balanceSumUSD).mul(discount)
+          return `${sum.toFixed(2)} $`
+          // return `${this.balanceSumUSD.toFixed(2)} $`
         }
-        return `${this.balanceSumFiat.toFixed(2)} ${fiatSymbol}`
+        const sum = new Decimal(this.balanceSumFiat).mul(discount)
+        return `${sum.toFixed(2)} ${fiatSymbol}`
+        // return `${this.balanceSumFiat.toFixed(2)} ${fiatSymbol}`
       },
       balanceSumMobile() {
         const fiatVal = getFiatByLocale(this.currentLang)
