@@ -20,7 +20,7 @@
     "minterjs-wallet": "^4.0.4",
     "minterjs-util": "^0.15.1",
     "bip39": "^3.0.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.5.0",
     "bootstrap-vue": "^2.0.0",
